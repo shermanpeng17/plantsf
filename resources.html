@@ -1,0 +1,603 @@
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=9" />
+  <title>SF PlantFinder</title>
+
+  <!-- New Font Awesome -->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
+    integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+
+  <!-- bootstrap style-->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+  <!-- bootstrap jquery and javascript -->
+  <script src="https://code.jquery.com/jquery-3.0.0.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"
+    integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"
+    integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k"
+    crossorigin="anonymous"></script>
+
+  <link rel="stylesheet" href="http://serverapi.arcgisonline.com/jsapi/arcgis/3.3/js/dojo/dijit/themes/claro/claro.css">
+  <link rel="stylesheet" href="http://serverapi.arcgisonline.com/jsapi/arcgis/3.3/js/esri/css/esri.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="css/style.css">
+
+
+
+</head>
+
+<body>
+  <!-- Header Content -->
+  <nav class="navbar navbar-expand-lg navbar-light">
+    <a class="navbar-brand" href="http://sfplanninggis.org/plantsfdev/">
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
+      aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div id="navbarNavDropdown" class="navbar-collapse collapse">
+      <ul class="navbar-nav mr-auto">
+
+      </ul>
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link" href="http://sfplanninggis.org/plantsfdev4.x_/">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link stepAbout" href="about.html">About</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link stepGlossary" href="glossary.html">Glossary</a>
+        </li>
+        <li class="nav-item stepResources">
+          <a class="nav-link" href="resources.html">Resources</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+  <!-- End Header Content -->
+
+  <!-- Body Content -->
+  <div id="mainContentShell">
+    <div id="mainContent">
+
+      <div id="logo-container">
+        <a class="navbar-brand" href="http://sfplanninggis.org/plantsfdev4.x_/">
+          <img class="logo_ stepWelcome" src="images/header-logo.png">
+        </a>
+        <div class="site-description_">
+          A toolkit for creating habitat and greening San Francisco
+        </div>
+      </div>
+      <!-- Right Column Content -->
+      <div id="subPageContent">
+
+        <div class="page-title-container">
+          <!-- <h1></h1> -->
+          Resources
+          <i class="fas fa-keyboard"></i>
+        </div>
+        <!-- <div class="page-title">Resources</div> -->
+        <p>
+          <a href="docs/CreateBackyardHabitatInfosheet.pdf" target="_blank">&raquo; How to Create Backyard &amp;
+            Neighborhood Habitat </a><br />
+          <br>
+          <a href="#programs">&raquo; Organizations &amp; Programs </a><br />
+          <a href="#guidelines-policies">&raquo; Guidelines &amp; Policies</a><br />
+          <br>
+          <!-- <a href="#plant-lists">&raquo; Approved City Plant Lists</a><br /> -->
+          <a href="#city-lists">&raquo; Approved City Lists</a><br />
+          <a href="#plant-palettes">&raquo; Plant Palettes</a><br />
+          <br>
+          <a href="#plant-nurseries">&raquo; Local Plant Nurseries</a><br />
+          <a href="#plant-nurseries">&raquo;</a> <a href="#volunteer">Native Plant Nursery Volunteer Opportunities in
+            San Francisco</a></br>
+          <br><br>
+          <p><a name="programs" id="programs"></a></p>
+
+          <div class="glossary-term-container">
+            <h3 class="glossary-term" id="plantType">Organizations &amp; Programs </h3>
+          </div>
+          <br>
+          <p><a href="http://www.sfenvironment.org/biodiversity" target="_blank">Biodiversity Program</a>,
+            San Francisco Department of the Environment<br />
+          </p>
+
+          <p><a href="http://www.bringingbackthenatives.net/" target="_blank">Bring Back the Natives</a>
+          </p>
+
+          <p><a href="http://www.calflora.org" target="_blank">Calflora</a></p>
+
+          <p><a href="http://www.cal-ipc.org/landscaping/calhip.php" target="_blank">California Horticultural
+              Invasives Project</a></p>
+
+          <p><a href="http://cnplx.info/" target="_blank">California Native Plant Exchange</a><br />
+          </p>
+
+          <p><a href="http://www.cnps.org" target="_blank">California Native Plant Society</a><br />
+          </p>
+
+          <p><a href="http://calscape.cnps.org/" target="_blank">Calscape</a>
+          </p>
+
+          <p><a href="http://www.sfenvironment.org/find-the-wild" target="_blank">Find the Wild</a> -
+            Visit natural areas in the city to discover birds, butterflies, and beautiful wildflowers!<br /></p>
+
+          <p><a href="http://researcharchive.calacademy.org/research/library/biodiv/biblio/sfnative-update.htm"
+              target="_blank">A Flora of San Francisco</a>
+          </p>
+
+          <p><a href="http://www.wood-biological.com/san-francisco-plant-checklist/" target="_blank">Flora of
+              San Francisco's Natural Areas</a>
+          </p>
+
+          <p><a href="http://fuf.net" target="_blank">Friends of the Urban Forest</a><br /></p>
+
+          <p><a href="http://www.gardenfortheenvironment.org" target="_blank">Garden for the
+              Environment</a> </p>
+
+          <p><a href="http://www.sf-planning.org/index.aspx?page=3002" target="_blank"> Green Connections
+            </a><br />
+          </p>
+
+          <p><a href="http://www.inaturalist.org/" target="_blank">iNaturalist</a> <br />
+          </p>
+
+          <p><a href="http://sfrecpark.org/parks-open-spaces/natural-areas-program/" target="_blank">Natural
+              Resources Program</a>, San Francisco Recreation and Parks Department</p>
+
+          <p><a href="http://www.laspilitas.com/" target="_blank">Las Pilitas Nursery</a>
+          </p>
+
+          <p><a href="http://www.natureinthecity.org" target="_blank">Nature in the City</a><br />
+          </p>
+
+          <p><a href="http://www.nwf.org/How-to-Help/Garden-for-Wildlife/Create-a-Habitat.aspx" target="_blank">National
+              Wildlife Federation</a>, Garden for Wildlife</p>
+
+          <p><a href="http://www.sfparksalliance.org" target="_blank">Parks Alliance</a></p>
+
+          <p><a href="http://www.plantnative.org/index.htm" target="_blank">Plant Native</a></p>
+
+          <p><a href="http://www.plantright.org/" target="_blank">PlantRight</a></p>
+
+          <p><a href="http://www.plantsf.org" target="_blank">PlantSF</a></p>
+
+          <p><a href="http://www.pollinator.org/guides.htm" target="_blank">Pollinator Partnership </a>
+          </p>
+
+          <p><a href="http://www.nativeplants.org/" target="_blank">Regional Parks Botanic Garden</a>
+          </p>
+
+          <p><a href="http://rescapeca.org/" target="_blank">Rescape California</a>
+          </p>
+
+          <p><a href="http://sfwma.org" target="_blank">San Francisco Weed Management Area</a></p>
+
+          <p><a href="http://www.sfwater.org/index.aspx?page=641" target="_blank">Sidewalk Garden
+              Project</a>, San Francisco Public Utilities Commission<br />
+          </p>
+
+          <p><a href="http://sfpublicworks.org/get_involved/street-parks-program" target="_blank">Street Parks
+              Program</a>, San Francisco Public Works<br />
+          </p>
+
+          <p><a href="http://www.helpabee.org/" target="_blank">Urban Bee Lab</a>, Gardening for Bees
+          </p>
+
+          <p><a href="http://www.sfenvironment.org/policy/urban-forestry-council" target="_blank">Urban Forestry
+              Council</a><br />
+          </p>
+
+          <p><a href="https://selectree.calpoly.edu/" target="_blank">Urban Forest Ecosystems
+              Institute</a>, SelecTree: A Tree Selection Guide<br />
+          </p>
+
+          <p><a href="http://theodorepayne.org/" target="_blank">Theodore Payne Foundation</a>
+          </p>
+
+          <p id="Title_Screen_title_Screen"><a href="http://www.sfwater.org/index.aspx?page=433" target="_blank">Urban
+              Watershed Program</a>,
+            San Francisco Public Utilities Commission</p>
+
+          <p><a href="http://sfport.com/index.aspx?page=219" target="_blank">Wetland Restoration</a>,
+            The Port of San Francisco</p>
+          <p><br />
+          </p>
+
+
+          <p><a name="guidelines-policies" id="plant-nurseries2" target="_blank"></a></p>
+          <div class="glossary-term-container">
+            <h3 class="glossary-term" id="plantType">Guidelines &amp; Policies</h3>
+          </div>
+          <br>
+          <p><a href="http://www.cnps.org/cnps/grownative/" target="_blank">California Native Plant
+              Gardening</a><br />
+            California Native Plant Society </p>
+
+          <p><a href="https://goldengateaudubon.org/wp-content/uploads/InvitingWildlife-SF.pdf"
+              target="_blank">Gardening for Wildlife</a><br />
+            Golden Gate Audubon</p>
+
+          <p><a href="http://cnps-yerbabuena.org/gardens/gardening_with_natives.html?jumpToGardeningArticle=27#pageTop"
+              target="_blank">Gardening with Natives</a><br />
+            California Native Plant Society</p>
+
+          <p><a
+              href="http://www.sf-planning.org/ftp/files/Citywide/green_connections/GC_Community-Resource-List-Final_Feb10.pdf"
+              target="_blank">Green Connections Community Resource List</a><br />
+            San Francisco Planning Department</p>
+
+          <p><a href="http://openspace.sfplanning.org/" target="_blank">Recreation and Open Space
+              Element</a><br />
+          </p>
+          <p>San Francisco Planning Department </p>
+
+          <p><a href="http://sfpublicworks.org/services/permits/sidewalk-landscaping-permits" target="_blank">Sidewalk
+              Landscaping Permit</a><br />
+            San Francisco Public Works<br />
+          </p>
+
+          <p><a href="http://www.sfwater.org/index.aspx?page=446" target="_blank">Stormwater Design
+              Guidelines<br />
+            </a> San Francisco Public Utilities Commission</p>
+
+          <p><a href="http://sustainablecity.org/Plan/Intro/intro.htm" target="_blank">Sustainability
+              Plan</a></p>
+          <p>San Francisco Department of the Environment</p>
+
+          <p><a href="http://www.sf-planning.org/index.aspx?page=3166" target="_blank">Urban Forest Master
+              Plan<br />
+            </a> San Francisco Planning Department</p>
+
+          <p><a href="http://sfwater.org/index.aspx?page=574" target="_blank">Water Conservation
+              Ordinances<br />
+            </a> San Francisco Public Utilities Commission</p>
+
+
+
+          <br><br>
+          <p><a name="city-lists" id="city-lists"></a>
+            <p><a name="plant-lists" id="plant-lists"></a>
+              <div class="glossary-term-container">
+                <h3 class="glossary-term" id="plantType">Approved City Plant Lists</h3>
+              </div>
+              <br>
+              <p>
+                The Plant Finder recommends wildlife-friendly plants and also houses all of the City’s plant lists for
+                all other purposes, including what Public Works recommends for its Sidewalk Planting Permit and through
+                its Thrifty 150 list. You can also find the Stormwater Plant Palette, published by the Public Utilities
+                Commission as well as the City’s recommended Street Tree List.
+                <br>
+                <br>
+                Click on the links to the different City Lists below and then proceed to filter those lists for various
+                habitat and other sustainability variables. These lists include many habitat-friendly species of plants.
+              </p>
+              <br>
+              <p><a href="http://www.sfwater.org/modules/showdocument.aspx?documentid=63" target="_blank">
+                  Climate Appropriate Plant List </a><br>
+                San Francisco Public Utilities Commission</p>
+
+
+              <p><a href="http://www.sfwater.org/Modules/ShowDocument.aspx?documentID=2775" target="_blank">
+                  Stormwater Vegetation Palette </a><br>
+                Recommended by the San Francisco PUC to comply with the <a
+                  href="http://sfwater.org/index.aspx?page=1000">Stormwater Management Ordinance</a>.</p>
+              <p>You can use the <a href="index.html?community=Stormwater">Plant Finder</a> for this list.</p>
+
+
+              <p><a href="http://sfpublicworks.org/services/plant-lists-and-plant-palettes" target="_blank">
+                  Sidewalk Landscaping </a><br>
+                Recommended by Public Works as drought tolerant and adaptable to a variety of microclimates and sidewalk
+                conditions.</p>
+              <p>You can use the <a href="index.html?community=SidewalkLandscaping">Plant Finder</a> for this list.</p>
+
+
+              <p><a href="http://sfpublicworks.org/services/approved-street-tree-list" target="_blank">Street
+                  Tree List </a><br>
+                Approved street tree list reviewed and adopted annually by the <a
+                  href="https://sfenvironment.org/article/managing-our-urban-forest-best-practices/list-of-recommended-street-trees"
+                  target="_blank">Urban Forestry Council</a>.<br></p>
+              <p>You can use the <a href="index.html?community=UrbanForestCouncilStreetTreeList">Plant Finder</a> for
+                this list.</p>
+
+
+              <p><a href="http://www.sfpublicworks.org/sites/default/files/THRIFTY ONE-FIFTY_FINAL_10_22_15.pdf"
+                  target="_blank">Thrifty 150</a><br>
+                Durable, low maintenance, water wise plants that are recommended by Public Works to do well in the
+                challenging urban environment of the city.</p>
+              <p>You can use the <a href="index.html?community=Thrifty150">Plant Finder</a> for this list.</p>
+
+
+              <p><a href="http://www.bcdc.ca.gov/planning/SPLG.pdf" target="_blank">Shoreline Plants Guide
+                </a></a><br>
+                Bay Conservation and Development Commission</p>
+
+
+
+              <br><br>
+              <p><a name="plant-palettes" id="plant-palettes"></a>
+                <div class="glossary-term-container">
+                  <h3 class="glossary-term" id="plantType">Plant Palettes</h3>
+                </div>
+                <br>
+                <p>The following are shorter, pre-selected palettes to give you good ideas for appropriate species for
+                  landscaping in San Francisco.</p>
+                <br>
+
+                <!-- <p style="color:#393;">Sandy Soil<br></p> -->
+                <p><a href="index.html?community=SandySoil">Sandy Soil</a></p>
+                <p>These local native species are the best for San Francisco's sandy soils. They thrive in the good
+                  drainage and will be very drought-tolerant once established.</p><br>
+                <p>Also see this much longer list of plants appropriate for <a
+                    href="index.html?community=sandysoilhabitat">sandy soils</a>.</p>
+
+
+                <!-- <p style="color:#393;">Shady Clay<br></p> -->
+                <p><a href="index.html?community=ShadyClay">Shady Clay</a></p>
+                <p>The moisture-holding capacity of a north-facing clayey slope is much different from a south-facing
+                  sandy slope. This palette should survive well in this moister environment once established.</p>
+
+
+                <!-- <p style="color:#393;">Super 60<br></p> -->
+                <p><a href="index.html?community=Super60">Super 60</a></p>
+                <p>The Super 60 contains common, relatively hardy, local native plants that will create high quality
+                  wildlife habitat in San Francisco. Selecting plants among the Super 60 will help lead to project
+                  success.</p>
+
+
+                <!-- <p style="color:#393;">Top 20<br></p> -->
+                <p><a href="index.html?community=Top20">Top 20</a></p>
+                <p>Like the Super 60, the Top 20 plants make great choices for creating habitat for bees, birds and
+                  butterflies in the urban environment. Try starting with these plants if you want to create a colorful
+                  and sustainable native habitat garden.</p>
+
+
+
+                <br><br>
+                <p><a name="plant-nurseries" id="plant-nurseries"></a>
+                  <div class="glossary-term-container">
+                    <h3 class="glossary-term" id="plantType">Local Plant Nurseries</h3>
+                  </div>
+                  <br>
+
+                  <p>The following are local native plant nurseries and one conventional nursery. Inquire with them
+                    directly regarding whether they carry native plants of San Francisco genetic stock. All of them
+                    carry Bay Area and California natives. For a full list of Bay Area Native Plant Nurseries
+                    click <a href="http://www.cnps.org/cnps/grownative/nurseries.php#bay" target="_blank">here</a>.</p>
+
+
+                  <p><a name="BayNatives" id="BayNatives" href="http://www.baynatives.com" target="_blank">Bay
+                      Natives Nursery</a><br>
+                    10 Cargo Way, San Francisco, CA <br>
+                    <em>Contact:</em> Paul Furman <br>
+                    <em>Email</em>: <a href="mailto:info@baynatives.com">info@baynatives.com</a><br>
+                    <em>Phone:</em> (415) 287-6755 <br>
+                    <i class="fa fa-long-arrow-right" aria-hidden="true"></i> View Bay Natives plants on <a
+                      href="index.html?nursery=Bay Natives" target="_blank">Plant Finder</a>
+                  </p>
+
+
+                  <p><a name="CaliforniaNativePlantSociety" id="CaliforniaNativePlantSociety"
+                      href="http://cnps-yerbabuena.org/gardens/plant_sales.html" target="_blank">California
+                      Native Plant Society</a>, Yerba Buena Chapter <br>
+                    350 O'Shaughnessy Boulevard, San Francisco, CA <br>
+                    <em>Phone:</em> 415-531-2140</p>
+                  <p>(annual native plant sale)</p>
+
+
+                  <p><a name="EastBayWilds" id="EastBayWilds" href="http://www.eastbaywilds.com" target="_blank">East
+                      Bay Wilds Plant Nursery</a><br>
+                    2777 Foothill Blvd, Oakland, CA <br>
+                    <em>Contact:</em> Pete Veilleux <br>
+                    <em>Email</em>: <a href="mailto:info@baynatives.com">pete@eastbaywilds.com</a><br>
+                    <em>Phone:</em> (510) 409-5858 <br>
+                    <i class="fa fa-long-arrow-right" aria-hidden="true"></i> View East Bay Wilds plants on <a
+                      href="index.html?nursery=East Bay Wilds">Plant Finder</a>
+                  </p>
+
+
+                  <p><a name="FloraGrubb" id="FloraGrubb" href="http://www.floragrubb.com" target="_blank">Flora
+                      Grubb Gardens & Nursery</a></br>
+                    1634 Jerrold Ave, San Francisco, CA <br>
+                    <em>Phone:</em> (415) 626-7256 <br>
+                    <i class="fa fa-long-arrow-right" aria-hidden="true"></i> View Flora Grubb plants on <a
+                      href="index.html?nursery=Flora Grubb">Plant Finder</a>
+                  </p>
+
+
+                  <p><a name="GoNativeNursery" id="GoNativeNursery" href="http://www.gonativeinc.com" target="_blank">Go
+                      Native Nursery</a><br>
+                    Montara, CA <br>
+                    <em>Email</em>: <a href="mailto:info@gonativeinc.com">info@gonativeinc.com</a><br>
+                    <em>Phone</em>: (650) 728-2286
+                  </p>
+
+
+                  <p><a name="HomeGroundHabitatNursery" id="HomeGroundHabitatNursery"
+                      href="http://www.homegroundhabitatnursery.org/" target="_blank">Home Ground Habitat
+                      Nursery</a><br>
+                    Focus on California Natives <br>
+                    <em>Contact:</em> Charlotte Torgovitsky <br>
+                    <em>Email</em>: <a href="mailto:torgovitsky@comcast.net">torgovitsky@comcast.net</a><br>
+                    <em>Phone:</em> (415) 892-9148 <br>
+                  </p>
+
+
+                  <p><a name="LarnerSeeds" id="LarnerSeeds" href="http://www.larnerseeds.com/" target="_blank">Larner
+                      Seeds</a><br>
+                    Native Plants Nursery <br>
+                    235 Grove Road, Bolinas, CA 94924 <br>
+                    <em>Email</em>: <a href="mailto:info@larnerseeds.com">info@larnerseeds.com</a><br>
+                    <em>Phone:</em> (415) 868-9407 <br>
+                    <table>
+                      <tr>
+                        <td style='vertical-align:top; width:60px;'><em>Hours:</em> </td>
+                        <td>Tuesday: 10am - 2pm <br>
+                          Thursday: 10am - 2pm <br>
+                          Saturday: 12pm - 4pm <br></td>
+                      </tr>
+                    </table>
+                  </p>
+
+
+                  <p><a name="Candlestick" id="Candlestick" href="http://www.lejyouth.org" target="_blank">Literacy for
+                      Environmental Justice - Candlestick Point
+                      Eco-Stewards</a><br>
+                    Native Plants Nursery <br>
+                    1150 Carroll Avenue, San Francisco, CA <br>
+                    <em>Contact:</em> Patrick Rump <br>
+                    <em>Email</em>: <a href="mailto:patrick.rump@lejyouth.org">patrick.rump@lejyouth.org</a><br>
+                    <em>Phone:</em> (415) 282-6840 <br>
+                    (open by appointment) <br>
+                    <i class="fa fa-long-arrow-right" aria-hidden="true"></i> View Literacy for Environmental Justice -
+                    Candlestick Point Eco-Stewards plants on <a href="index.html?nursery=Candlestick">Plant Finder</a>
+                  </p>
+
+
+                  <p><a name="MissionBlue" id="MissionBlue" href="http://www.mountainwatch.org/mission-blue-nursery/"
+                      target="_blank">Mission Blue
+                      Nursery</a><br>
+                    near 3401 Bayshore Boulevard, Brisbane, CA 94005 <br>
+                    Get <a href="http://www.mountainwatch.org/directions/" target="_blank">directions</a><br>
+                    <em>Email</em>: <a href="mailto:nursery@mountainwatch.org">nursery@mountainwatch.org</a><br>
+                    <em>Phone:</em> (415) 467-6631 <br>
+                    (open by appointment) <br>
+                    <i class="fa fa-long-arrow-right" aria-hidden="true"></i> View Mission Blue plants on <a
+                      href="index.html?nursery=Mission Blue">Plant Finder</a>
+                  </p>
+
+
+                  <p><a name="NativeHere" id="NativeHere" href="http://www.ebcnps.org/" target="_blank">Native
+                      Here Nursery</a><br>
+                    101 Golf Course Drive, Berkeley, CA <br>
+                    <em>Contact: </em>Theo Fitanides <br>
+                    <em>Email:</em>&nbsp;<a href="mailto:nativehere@ebcnps.org">nativehere@ebcnps.org</a><br>
+                    <em>Phone:</em>&nbsp;(510) 549-0211 <br>
+                    (open year-round) <br>
+                    <i class="fa fa-long-arrow-right" aria-hidden="true"></i> View Native Here plants on <a
+                      href="index.html?nursery=Native Here">Plant Finder</a>
+                  </p>
+
+
+                  <p><a name="Nature'sAcresNursery" id="Nature'sAcresNursery" href="http://www.naturesacresnursery.com"
+                      target="_blank">Nature's Acres
+                      Nursery</a><br>
+                    Penngrove, CA <br>
+                    <em>Contacts:</em> Andrew Scavullo &amp; Josiah Clark <br>
+                    <em>Email:</em> <a href="mailto:naturesacresnursery@gmail.com">naturesacresnursery@gmail.com</a><br>
+                    <em>Phone:</em> (415) 713-1572 or (415) 317-3978 <br>
+                    (call for appointments or delivery)
+                  </p>
+
+
+                  <p><a name="Oaktown" id="Oaktown" href="http://www.oaktownnativenursery.info/index.html"
+                      target="_blank">Oaktown Native Plant Nursery</a><br>
+                    702 Channing Way, Berkeley, CA <br>
+                    <em>Email:</em> <a
+                      href="mailto:oaktown@oaktownnativenursery.info">oaktown@oaktownnativenursery.info</a><br>
+                    <em>Phone</em>: (510) 387-9744 <br>
+                    <i class="fa fa-long-arrow-right" aria-hidden="true"></i> View Oaktown plants on <a
+                      href="index.html?nursery=Oaktown">Plant Finder</a>
+                  </p>
+
+
+                  <p><a name="SutroStewards" id="SutroStewards" href="http://sutrostewards.org/events"
+                      target="_blank">Sutro Stewards Native Plant Nursery</a><br>
+                    476 Johnstone Drive, UCSF Parnassus Campus, San Francisco, CA <br>
+                    <em>Email:</em> <a href="mailto:liza@sutrostewards.org">liza@sutrostewards.org</a><br>
+                    <em>Phone:</em> (415) 665-1077 <br>
+                    <em>Hours:</em> Wednesdays 9:30-12:30 <br>
+                    <i class="fa fa-long-arrow-right" aria-hidden="true"></i> View Sutro Stewards plants on <a
+                      href="index.html?nursery=Sutro Stewards">Plant Finder</a>
+                  </p>
+
+
+                  <p><a name="WatershedNursery" id="WatershedNursery" href="http://www.watershednursery.com"
+                      target="_blank">The Watershed Nursery</a><br>
+                    601A Canal Blvd, Richmond, CA <br>
+                    <em>Phone:</em> (510) 234-2222 <br>
+                    <i class="fa fa-long-arrow-right" aria-hidden="true"></i> View Watershed plants on <a
+                      href="index.html?nursery=Watershed Nursery">Plant Finder</a></p>
+                  <br><br>
+
+                  <p><a name="volunteer" id="volunteer"></a> </p>
+                  <div class="glossary-term-container">
+                    <h3 class="glossary-term" id="plantType">Native Plant Nursery Volunteer Opportunities in San
+                      Francisco</h3>
+                  </div>
+                  <br>
+                  <p><a href="http://www.candlestickconnect.org" target="_blank"> Candlestick Native Plant
+                      Nursery</a><br>
+                    (415) 282-6840</p>
+
+                  <p><a
+                      href="http://www.parksconservancy.org/get-involved/volunteer/drop-in-programs/fort-funston-nursery.html"
+                      target="_blank">Fort Funston Native Plant Nursery</a><br>
+                    (415) 652-2373</p>
+
+                  <p><a href="http://sfrecpark.org/support-your-parks/volunteer-program/" target="_blank">Golden
+                      Gate Park Native Plant Nursery</a><br>
+                    (415) 831-6330</p>
+
+                  <p><a href="http://www.presidio.gov/volunteer/presidio-nursery-weekly-volunteer-programs"
+                      target="_blank">Presidio Native Plant Nursery</a><br>
+                    (415) 561-4826</p>
+
+                  <p><a href="http://sutrostewards.org/events" target="_blank">Sutro Stewards Native Plant
+                      Nursery</a><br>
+                    (415) 665-1077</p>
+      </div>
+      <p>&nbsp;</p>
+    </div>
+    <!-- End mainContent -->
+
+  </div>
+  <!-- End mainContentShell -->
+
+  <!-- Footer Content -->
+  <footer id="footerShell">
+    <div id="footerContent" style="display:flex">
+      <div class="left">&copy; <span id="year"></span> City and County of San Francisco.<br />
+        This site is brought to you by the following city agencies and <br />
+        a grant from the California Strategic Growth Council.</div>
+      <div class="right"><img src="images/dept-logos.png" width="690" height="64" border="0" usemap="#agencies" />
+        <map name="agencies" id="agencies">
+          <area shape="rect" coords="105,8,227,62" href="http://www.sfplanning.org" target="_blank"
+            alt="San Francisco Planning Department" />
+          <area shape="rect" coords="630,2,694,61" href="http://www.sfdpw.org" target="_blank"
+            alt="San Francisco Department of Public Works" />
+          <area shape="rect" coords="273,0,369,64" href="http://www.sfenvironment.org" target="_blank"
+            alt="SF Environment" />
+          <area shape="rect" coords="409,8,591,60" href="http://www.sfwater.org" target="_blank"
+            alt="SF Public Utilities Commission" />
+        </map>
+
+      </div>
+    </div>
+  </footer>
+  <!-- End Footer Content -->
+
+  <script>
+    var year = new Date().getFullYear();
+    $('#year').text(year);
+    
+    $(window).scroll(function () {
+      if ($(this).scrollTop() > 0) {
+        $('#logo-container').hide();
+
+      } else {
+        $('#logo-container').show();
+      }
+    })
+  </script>
+</body>
+
+</html>

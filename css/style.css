@@ -1,0 +1,1303 @@
+@charset "UTF-8";
+
+/*
+	SECTIONS FOR CSS
+		- basic webpage look
+		- Table styling for printing
+		- Header content
+		- Filter side bar
+		- Favorite List
+*/
+
+/* BASIC WEBPAGE LOOK */
+* {
+	margin:0; 
+	padding:0;
+}
+
+body {
+	/* font-family:"Helvetica Neue", Helvetica, Arial, sans-serif; */
+	font-family: 'Rubik', sans-serif;
+
+	background-color:#E3E3E3;
+	height:100vh;
+	width:100%;
+	line-height: 1rem;
+	box-sizing: border-box;
+	font-size: 12px;
+}
+
+
+h1 {
+	font-size: 2em;
+	font-weight: normal;
+	line-height: 1.15em;
+	letter-spacing: -.015em;
+	color: #333;
+	padding-bottom: .5em;
+}
+
+h2 {
+	font-size: 1.1rem;
+}
+
+h3 {
+	font-size: 0.9rem;
+	padding-bottom: 3px;
+	display: inline-block;
+	margin-bottom: 0px;
+	/* border-bottom: 1px dashed #AAA; */
+}
+
+h4 {
+	/* font-family: Georgia, "Times New Roman", Times, serif; */
+	font-size: 17px;
+	font-weight: normal;
+	line-height: 1.15em;
+	color: rgb(19, 18, 18);
+	padding-bottom: -0.5em;
+	padding-top: .7em;
+}
+
+h5 {
+	/* font-family:"Helvetica Neue", Helvetica, Arial, sans-serif; */
+	font-size: 14px;
+	font-weight: normal;
+	line-height: 1.15em;
+	color: #333;
+	padding-top: .25em;
+}
+
+a {
+	color: #393;
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: none;
+	color: #000;
+	text-decoration: underline
+}
+
+a.print, .print-custom-list {
+	background-image: url(../images/icon_print.gif);
+	background-repeat: no-repeat;
+    background-position: 4px center;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	color: #999;
+	padding: 3px 6px 3px 21px;
+	border: 1px solid #CCC;
+	text-decoration: none;
+	border-radius: 4px;
+    -moz-border-radius: 4px;
+    -webkit-border-radius: 4px;
+}
+
+a.print:hover {
+	color: rgb(51, 51, 51);
+	border: 1px solid black;
+	text-decoration: none;
+}
+
+/* Table styling for printing */
+table {
+	border-collapse:  collapse;
+	border-spacing: 0px;
+}
+
+th {
+font-weight: bold;
+}
+
+td, th {
+display: table-cell;
+vertical-align: inherit;
+}
+
+
+.glossary-term {
+	font-weight:bold;
+	color:#000;
+}
+
+/* Header content */
+
+.test {
+	color: white;
+}
+
+.navbar {
+	background-color: rgb(15, 56, 15) !important;
+	position: sticky;
+	top: 0;
+	z-index: 10;
+}
+
+.navbar-toggler {
+	background-color: white;
+}
+
+#logo-container {
+	height: 0px;
+	width: 770px;
+	margin: auto;
+	position: relative;
+}
+
+.logo_{
+	position: absolute;
+	left: -180px;
+	top: -55px;
+	z-index: 40;
+}
+
+.logo {
+	/* position: fixed;
+	top: 0;
+	left: 13%; */
+	left: -160px;
+	top: -65px;
+	width: 150px;
+	position: absolute;
+	z-index: 40;
+}
+
+@media (max-width: 990px) {
+	.logo, .logo_ {
+		display: none;
+	}
+	.site-description, .site-description_ {
+		display: none;
+	}
+}
+
+
+	
+@media (max-width: 1200px) {
+	.logo, .logo_ {
+		left: -120px;
+		width: 110px;
+	}
+}
+
+.nav-item a{
+	color: rgb(255, 255, 255) !important;
+}
+
+.plantListHeader {
+	width: 70%;
+	display: inline-block
+}
+
+
+.listButtons {
+margin-top: 5px;
+}
+
+.border {
+	height: 5px;
+	background-color: green;
+	border: 5px solid green;
+	border-radius: 5px;
+}
+
+.navbar-nav li a:hover{
+	background-color: rgb(238, 238, 234);
+	color:  rgb(15, 56, 15) !important;
+	transition: .5s;
+}
+
+#headerShell {
+	width:100%;
+	background: url(../images/bkg-header.png) repeat-x;
+	background-color:#A0B467;
+	height: 100px;
+	/* z-index: 1000; */
+	-moz-box-shadow: inset 0px -15px 15px -15px rgba(0,0,0,0.65);
+	-webkit-box-shadow: inset 0px -15px 15px -15px rgba(0,0,0,0.65);
+	box-shadow: inset 0px -15px 15px -15px rgba(0,0,0,0.35);
+}
+
+i::before {
+	content: "<<"
+}
+
+#nav-options {
+	margin-right: 30px;
+}
+
+ul li {
+	display: inline-block;
+	margin-left: 20px;
+}
+
+.topnav a {
+	float: left;
+	color: black;
+	text-align: center;
+	padding: 14px 16px;
+	text-decoration: none;
+	font-size: 17px;
+}
+
+#headerContent {
+	position: relative;
+	width: 1020px;
+	height: 80px;
+	display: inline-block;
+	margin: 0;
+}
+
+#headerContent .links a {color:#393;}
+#headerContent a.links:hover {text-decoration:none; color:#512F25; background-color:#FFF;}
+#headerContent .current {background-color: #FFF;}
+
+#headerContent .site-description {
+	font-size: 18px;
+	color: #FFF;
+	font-style: italic;
+	position: absolute;
+	left: 215px;
+	top: 40px;
+	line-height: 1.25em;
+}
+
+.site-description {
+	z-index: 11;
+
+}
+
+.input-group {
+	width: 80%;
+}
+
+#addressInput {
+	width: 70%;
+	border: 3px solid green;
+}
+
+.fa-search {
+	font-size: 18px;
+}
+
+#searchTerm:focus{
+	color: black;
+}
+
+.searchButton {
+	width: 40px;
+	background:green;
+	text-align: center;
+	color: #fff;
+}
+
+.searchButton:hover {
+	background: green;
+	color: white;
+	border: 0;
+}
+
+.search-section {
+	position: relative;
+}
+
+.search-section .site-description {
+	font-size: 20px;
+	position: absolute;
+	top: -45px;
+	color: white;
+	font-style: italic;
+}
+
+.search-container {
+	padding: 3%;
+	width: 100%;
+	background-color: white;
+	margin: 1% auto 0% auto;
+	box-shadow: 0px 0px 5px rgba(0, 0, 0, .2);
+}
+
+.plant-image-container img{
+	border-radius: 5%;
+}
+
+
+.fa-arrow-right{
+	color: green;
+}
+
+#preselected .buttons  {
+	padding-left: 10px;
+}
+
+#cityList .buttons {
+	padding-left: 10px;
+}
+
+#plantPalettes .buttons {
+	padding-left: 10px;
+}
+
+.choiceHeader {
+	display: flex;
+	margin: 0%;
+	padding: 0%;
+}
+
+.header-title {
+	/* display: list-item;
+	list-style-type: disc;
+	list-style-position: outside; */
+}
+
+.bulletPoint {
+	width: 15px;
+	height:15px;
+	border-radius: 15px;
+	background-color: green;
+	position: relative;
+	left: -5px;
+	top: 10px;
+}
+
+.searchWrap{
+	width: 80%;
+}
+
+#plantCategories {
+	width: 100%;
+}
+
+
+/* BUTTONS SECTION */
+.btn:focus, .btn:active:focus  {
+	outline: 0px;
+}
+
+.btn-md {
+	color: green !important;
+	border: 1px green solid !important;
+}
+
+.btn-sm {
+	color: green !important;
+	border: 1px green solid !important;
+	font-size: ;
+}
+
+.btn-sm:hover {
+	background-color: green !important;
+	color: white !important;
+}
+
+#plantCategories .btn {
+	margin-bottom: 4px !important;
+	margin-left: 4px !important;
+}
+
+
+.btn-sm:focus {
+	background-color: green !important;
+	color: white !important;
+	box-shadow: none !important;
+}
+
+
+/* Map Search Form and Plant Communities */
+
+#mainContent-Search-LeftCol {
+	width: 420px;
+	/*float: left;*/
+	color: #AAA;
+	padding: 10px 20px 0px 20px;
+}
+
+#mainContent-Search-LeftCol .links td {
+	font-size: 12px;
+	font-style: italic;
+	font-weight: 600;
+	line-height: 1.2em;
+	color: #666;
+	vertical-align: top;
+}
+
+#mainContent-Search-LeftCol .links img {
+	padding-bottom: 8px;
+	cursor: pointer;
+}
+
+#mainContent-Search-LeftCol .links a:hover { opacity: 0.9; -webkit-filter: saturate(2.5); }
+
+
+#addressForm {
+	margin: 0;
+	font-size: 14px;
+	width: 100%;
+	padding: 15px 0 20px 0;
+	margin-bottom: 20px;
+}
+
+
+.searchButton a {
+	background-color: #75B43E;
+	color: #FFF;
+	cursor: pointer;
+	font-size:14px;
+	font-weight: bold;
+	padding: 7px 18px 8px 18px;
+	text-decoration: none;
+	border: 2px solid #CCC;
+	border-radius: 6px;
+	-moz-border-radius: 6px;
+	-webkit-border-radius: 6px;
+	clear:none;
+}
+
+.searchButton a:hover {
+	background-color: #512F25;
+	border: 2px solid #CCC;
+	color: #D1E48F;
+	text-decoration: none;
+}
+
+.buttons-list .button {
+	display: inline-block;
+	margin-top: 12px;
+	margin-right: 5px;
+}
+
+.buttons-list :hover {
+	opacity: 0.9;
+}
+
+/* Map */
+
+#mapContainer {
+	/* width: 900px;
+	height: 400px; */
+	height: 100%;
+	width: 100%;
+	clear: none;
+	border-radius: 15px;
+	/* moz-box-shadow: inset 0 0 40px rgba(0,0,0,0.25);
+	-webkit-box-shadow: inset 0 0 40px rgba(0,0,0,0.25);
+	box-shadow: inset 0 0 40px rgba(0,0,0,0.25); */
+	border: 4px solid gray;
+}
+
+.header-title {
+	color: rgb(41, 56, 78);
+	font-weight: bold;
+}
+
+
+#custom-plant-list li {
+	display: block;
+}
+
+.shopping-item {
+	margin-bottom: 5px;
+	position: relative;
+	width: 100%;
+}
+
+.remove-from-custom-list {
+	position: relative;
+	opacity: 0;
+	transition: all 0.5s;
+	visibility: hidden;
+	padding: 0 !important;
+	margin-left: 20px;
+}
+
+.shopping-item:hover .remove-from-custom-list {
+	opacity: 1;
+	visibility: visible;
+}
+
+#custom-plant-list img{
+	width: 50px;
+	height: 50px;
+}
+
+.shopping-item .plant-description {
+	padding-left: 0px !important;
+	margin-bottom: 5px;
+}
+
+.fa-times-circle {
+	color: green;
+	font-size: 20px;
+}
+.filter-summary {
+	font-size: 15px;
+}
+
+
+#searchResultsSummary {
+	margin-top: 10px;
+	font-size: 20px;
+	line-height: 1.5rem;
+}
+
+#searchResultsSummary p {
+	margin-bottom: 0;
+}
+
+.print-instructions {
+	font-style: italic;
+	font-size: 12px;
+}
+
+.plant-description {
+	padding-left: 10px;
+	width: 50%;
+}
+
+.plant-image-container {
+	width: 40%;
+	max-height: 90px;
+}
+
+.plant-image-container img {
+	width: 100%;
+	height: 100%;
+}
+
+.plant-description p {
+	margin-bottom: 0% !important;
+}
+
+.plant-description .btn {
+	padding-left: 0;
+	padding-right: 0;
+	height: 24px;
+}
+
+.plant-photos a {
+	font-size: 12px;
+	line-height: 0rem !important;
+}
+
+#plantlist .row {
+	margin-bottom: 15px !important;
+}
+
+#plantList .btn {
+	margin-bottom: 0px !important;
+	margin-left: 0px !important;
+}
+
+#plantlist .col-md-4 {
+	padding-right: 0;
+	padding-left: 0;
+}
+
+.plant-photos p {
+	font-size: 9px;
+}
+
+.fa-shopping-cart {
+	color: green;
+}
+
+#searchResults .toggleFilter {
+	position: relative;
+	float: right;
+	text-align: right;
+	/* font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; */
+	font-size: 12px;
+	font-style: normal;
+	font-weight: 700;
+	color: #6C3;
+	cursor: pointer;
+	clear: none;
+	padding: 0 5px;
+	border: 1px solid #CCC;
+	border-radius: 3px;
+
+}
+
+#floatingDivForFilter {
+	width: 150px;
+	position: relative;
+	float: left;
+	top: 0;
+	right: 0;
+	padding: 0px 20px 20px 20px;
+	/* background-color: #E9E9E9; */
+	border-left: 1px dashed #EEE;
+	/* font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; */
+	font-style: normal;
+	font-size: 12px;
+	font-weight: normal;
+	line-height: 1.45em;
+	color: #555;
+}
+
+/* Filter side bar */
+#filterHeader {
+	margin-bottom: 20px
+}
+
+
+#filterSection {
+  	width: 20%;
+  	height: 100%;
+	text-overflow: ellipsis;
+	overflow: hidden;
+}
+
+#filterSection .p-3 {
+	padding: 0.7rem!important;
+}
+
+.filter-container {
+	box-shadow: 0px 0px 5px rgba(0, 0, 0, .2);
+}
+
+.custom-checkbox .custom-control-input:checked~.custom-control-label::before{
+  background-color:green;
+}
+
+.custom-control-label {
+	line-height: 24px;
+}
+
+h6 a {
+	font-size: 0.75rem;
+  	color: green;
+}
+
+
+.filterCategory .accordion-toggle:after {
+  float: right;
+  font-family: "Font Awesome 5 Free";
+  font-weight: 600;
+  content: "\f107";
+  padding-right: 6px;
+}
+
+.filterCategory p {
+	color: green;
+}
+
+.filterCategory .accordion-toggle.collapsed:after {
+  font-family: "Font Awesome 5 Free";
+  font-weight: 600;
+  content: "\f105";
+  /* content: "\f078"; */
+}
+
+.filterCategory a {
+  text-decoration: none;
+}
+
+#floatingDivForFilter h1 {
+	/* font-family: Georgia, "Times New Roman", Times, serif; */
+	font-size: 18px;
+	font-style: normal;
+	color: #BBB;
+}
+
+#plantlist {
+	width: 100%;
+	padding-left: 10px;
+	padding-top: 10px;
+	overflow: hidden;
+}
+
+#PlantList td {
+	padding-bottom: 10px;
+	padding-right: 10px;
+}
+
+/* HOMEPAGE RIGHT COLUMN: Green Connections */
+
+#greenConnectionsList {
+	width: 790px;
+	position: relative;
+	margin-top:20px;
+	border-top: 1px dashed #EEE;
+	padding-top: 10px;
+}
+
+.gclogo {
+	width: 75px;
+	display: block;
+	float: right;
+	position: relative;
+	text-align: center;
+}
+
+
+/* HOMEPAGE RIGHT COLUMN: Hidden Frame for Plant Info */
+
+#info {
+	display: inline-block;
+	position: relative;
+	width: 980px;
+	margin: 20px;
+	top: 0;
+	right: 0;
+	clear: none;
+	z-index: 1000;
+}
+
+#info .images {
+	position: relative;
+	float:right;
+	width: 375px;
+	padding: 0px;
+	margin-left: 15px;
+}
+
+#info .plantDetails td {
+	border-top: 1px solid #DEDEDE;
+	padding-top: 4px;
+	padding-bottom: 10px;
+	vertical-align: top;
+}
+
+#info .toggleSearch {
+	position: relative;
+	float: right;
+	text-align: right;
+	/* font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; */
+	font-size: 12px;
+	font-style: normal;
+	font-weight: 700;
+	color: #6C3;
+	cursor: pointer;
+	clear: none;
+}
+
+/* Favorite list */
+.favorites {
+	position: fixed;
+	right: -15rem;
+	width: 15rem;
+	z-index: 999;
+	overflow: scroll;
+	height: 100%;
+}
+
+.favorites__header {
+	text-align: center;
+	display: flex;
+	padding: 10px 0px 5px 4px
+}
+
+.favorites-container {
+	background: rgb(243, 239, 239);
+	height: 100%;
+	border-left: solid 2px rgb(2, 90, 2);
+	overflow: auto;
+}
+
+.hide-favorites {
+	right: -15rem;
+	transition: all 0.6s ease;
+}
+
+.show-favorites {
+	width: 15rem;
+	right: 0;
+	transition: all 0.6s ease;
+}
+
+#favorites__header-title {
+	font-size: 2rem;
+	padding-top: 15px;
+}
+
+.fa-times {
+	font-size: 20px;
+}
+
+.favorites-count-container{
+	position: fixed;
+	right: -2rem;
+}
+
+.show-favorites-count {
+	right: 0;
+	transition: all 0.6s ease;
+}
+
+.hide-favorites-count {
+	right: -2rem;
+	transition: all 0.6s ease;
+}
+
+#favorites-symbol {
+	font-size: 2rem;
+}
+
+#custom-plant-count {
+	display: block;
+	text-align: center;
+	font-size: 20px;
+}
+
+.clear-favorite-list {
+	padding-top: 2px;
+	margin-top: 20px;
+	cursor: pointer;
+}
+
+/* End favorite list*/
+
+
+/* Subpages */
+
+#subPageNav {
+	position: relative;
+	display: block;
+	float: left;
+	width: 180px;
+	margin: 80px 0px 0px 20px;
+
+}
+
+#subPageNav li {
+	display: block;
+	margin: 0em 0em;
+	padding: 0.6em 0.4em;
+	border-bottom: 1px solid #CCC;
+	/* font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; */
+	font-size: 13px;
+	font-weight: bold;
+}
+#subPageNav .sub {border-bottom: 1px dashed #AAA;}
+#subPageNav .current {background-color: #FFF;}
+
+
+#subPageContent {
+	position: relative;
+	display: block;
+	/* float: right; */
+	width: 770px;
+	margin: 10px auto 10px auto;
+	background-color: #FFF;
+	padding: 25px;
+	overflow: auto;
+}
+
+
+/* FOOTER */
+
+#footerShell {
+	/* width: 700px; */
+	position: relative;
+	/* max-width: 100%; */
+	/* margin-top: -100px; */
+	height: 100px;
+	clear: both;
+}
+/* #footerShell {
+	width: 100%;
+	height: 100px;
+	position: inherit;
+	text-align:center;
+	bottom: 0;
+	clear: both;
+	position: relative;
+	left: 0;
+	bottom: 0;
+} */
+
+#footerContent {
+	position: relative;
+	bottom: 0;
+	width: 1020px;
+	max-width: 100%;
+	display: inline-block;
+	margin: auto;
+}
+
+#footerContent .left {
+/*
+	float: left;
+	text-align: left; */
+	/* font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; */
+	font-size: 10px;
+	color: #454545;
+	margin-right: 40px;
+	padding-top: 5px;
+}
+
+/* MISC */
+
+.contentPointer {
+	background: no-repeat center url(../images/bkg-column-pointer.png);
+	height: 20px;
+	width: 38px;
+	display: inline-block;
+	left: 200px;
+	top: -20px;
+	position: absolute;
+	clear: none;
+}
+
+#FloatingTextHint {
+	display: inline-block;
+	background-color: #FFF;
+	height: 14px;
+	padding: 3px;
+	top: 405px;
+	left: 465px;
+	position: absolute;
+	clear: none;
+	z-index: 100;
+}
+
+
+#plantInfo {
+	background-color: #FEFEF3;
+	height: auto;
+	display: none;
+	-moz-box-shadow: inset 0px -25px 25px -25px rgba(0,0,0,0.15);
+	-webkit-box-shadow: inset 0px -25px 25px -25px rgba(0,0,0,0.15);
+	box-shadow: inset 0px -25px 25px -25px rgba(0,0,0,0.15);
+}
+.slide {
+	margin: 0;
+	padding: 0;
+	border-top: solid 3px #422410;
+}
+.btn-slide {
+	background-color: #422410;
+	text-align: center;
+	width: 60px;
+	padding: 5px 5px;
+	margin: 0 auto;
+	display: block;
+	font: bold 70%/100% Arial, Helvetica, sans-serif;
+	color: #EEE;
+	text-decoration: none;
+}
+a.btn-slide:hover {
+	color: #FFF;
+	text-decoration: none;
+}
+
+.active {
+	background-position: right 12px;
+}
+
+
+
+/* POPUP TEXT FOR HINTS & DEFINITIONS */
+
+h4.tooltip {display: inline;}
+
+a.tooltip {outline:none; }
+a.tooltip strong {line-height:30px;}
+a.tooltip:hover {text-decoration:none;}
+
+a.tooltip span {
+    z-index: 20;
+	display: none;
+	padding: 15px 20px;
+    margin-top: -90px;
+	margin-left: 95px;
+    width: 325px;
+	/* font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; */
+	font-size: 11px;
+	line-height: 14px;
+	font-style: normal;
+	text-align: left;
+	border-radius:4px;
+    -moz-border-radius: 4px;
+    -webkit-border-radius: 4px;
+}
+
+a.tooltip:hover span{
+	z-index: 20;
+    display: inline;
+	position: absolute;
+	color: #FFF;
+	background-color: #422410;
+
+}
+
+.callout {
+	z-index: 200;
+	position: absolute;
+	top: 30px;
+	border: 0;
+	left: -12px;
+}
+
+h4.tooltip {outline:none; }
+h4.tooltip strong {line-height:30px;}
+h4.tooltip:hover {text-decoration:none;}
+
+h4.tooltip span {
+    z-index: 20;
+	display: none;
+	padding: 15px 20px;
+    margin-top: -60px;
+	margin-left: 15px;
+    /*width: 325px;*/
+    width: 275px;
+	/* font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; */
+	font-size: 11px;
+	line-height: 14px;
+	font-weight: bold;
+	text-align: left;
+	border-radius:4px;
+    -moz-border-radius: 4px;
+    -webkit-border-radius: 4px;
+}
+
+h4.tooltip:hover span{
+	z-index: 20;
+    display: inline;
+	position: absolute;
+	color: #FFF;
+	background-color: #422410;
+
+}
+
+
+/* HOMEPAGE INTRO */
+
+
+.search-result-section {
+	max-width: 100%;
+	position: relative;
+	margin: auto;
+	margin: 20px auto 10px auto;
+}
+
+.intro-section {
+	margin: auto;
+	padding-left: 0;
+	padding-right: 0;
+	/* margin: 20px auto 0 auto; */
+}
+
+#intro {
+	box-sizing: border-box;
+	background-color: white;
+	width: 100%;
+	height: 90%;
+	margin-left: auto;
+	margin-right: auto;
+	padding: 50px 50px 50px 50px;
+	box-shadow: 0px 0px 5px rgba(0, 0, 0, .2);
+}
+
+
+.col {
+	padding: 0% !important;
+}
+
+#intro p {
+  font-size: 1.25em;
+	line-height: 1.75em;
+	font-weight: normal;
+	color: #666;
+}
+
+.rightCol-300 {
+	float: right;
+	width: 260px;
+	padding: 0;
+	margin: 0 0 25px 30px;
+}
+
+.rounded-corners {
+	border-radius: 1em;
+	-moz-border-radius: 1em;
+	-webkit-border-radius: 1em;
+}
+
+/* HIDE WHEN PRINTING */
+@media print
+{
+    .no-print, .no-print *
+    {
+        display: none !important;
+    }
+	.no-print-borders
+	{
+		border: none !important;
+		box-shadow: none !important;
+		webkit-box-shadow: none !important;
+		-webkit-box-shadow:none;
+	}
+	#mainContent-SearchResults
+	{
+		border: none !important;
+		box-shadow: none !important;
+		webkit-box-shadow: none !important;
+		-webkit-box-shadow:none;
+	}
+}
+
+.modal-body {
+	overflow-x: auto;
+}
+
+.imageRow{
+	display: flex;
+}
+
+.picture{
+	margin-right: 10px;
+	position: relative;
+	overflow: hidden;
+}
+
+
+.picture img {
+	max-width: 100%;
+
+	-moz-transition: all 0.3s;
+	-webkit-transition: all 0.3s;
+	transition: all 0.3s;
+}
+.picture:hover img {
+	-moz-transform: scale(1.1);
+	-webkit-transform: scale(1.1);
+	transform: scale(1.1);
+}
+
+#modalTitle{
+	font-size: 30px;
+	font-weight: bold;
+}
+
+
+
+.familyNames{
+	display: flex;
+}
+
+.nameDescription {
+	font-size: 16px;
+	margin-right: 18px;
+	color: rgb(54, 14, 14);
+	/* font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; */
+}
+
+.tableContainer {
+	/* font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; */
+}
+
+#plantInfoModal{
+	font-size: 14px;
+}
+
+
+.disabledDIV {
+  pointer-events: none;
+  opacity: 0.5;
+}
+
+/* MAP */
+
+#basemap-dropdown {
+	position: absolute;
+	right: 20px;
+	top: 30px;
+}
+
+#loadSpinner__map {
+	position: absolute;
+	left: 50%;
+	bottom: 50%;
+	transform: translate(-50%, 50%);
+	z-index: 10;
+}
+.esri-interactive {
+	display: none;
+}
+
+/* MISC */
+
+hr {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+#loadSpinner{
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  z-index: 99;
+}
+
+#showAddress{
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  z-index: 10;
+}
+
+.disabledDIV {
+	pointer-events: none;
+	background-color: white;
+  opacity: 0.4;
+}
+
+.fa-arrow-right {
+	color: green;
+	font-size: 1rem;
+}
+
+/* -------- STYLE FOR SUB-PAGES --------- */
+
+.glossary-term {
+    font-weight: bold;
+}
+
+.page-title {
+    font-size: 30px;
+}
+
+.glossary-term-container {
+	max-width: 400px;
+	/* border-bottom: 2px solid red; */
+}
+
+.page-title-container {
+    border-bottom: 3px solid #422410;
+    font-size: 30px;
+    margin-bottom: 25px;
+    line-height: 1.15em
+}
+
+#subPageContent .site-description {
+	/* font-family: Georgia, "Times New Roman", Times, serif; */
+	font-size: 18px;
+	color: white;
+	font-style: italic;
+	position: absolute;
+	left: 45px;
+	top: -45px;
+	line-height: 1.25em;
+}
+
+.site-description_ {
+	font-size: 18px;
+	color: white;
+	font-style: italic;
+	position: absolute;
+	left: 45px;
+	top: -35px;
+	line-height: 1.25em;
+	z-index: 40;
+}
+
+.fas {
+	color: rgb(9, 92, 9);
+}
+
+hr.glossary-separator {
+	border-top: 1px dashed gray;
+}

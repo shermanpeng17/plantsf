@@ -1,0 +1,73 @@
+	.dhtmlgoodies_tabPane{
+		height:21px;	/* Height of tabs */
+		
+	}
+	.dhtmlgoodies_aTab{
+		overflow:auto;
+		border-left:1px solid #b7d8ed;
+		border-right:1px solid #b7d8ed;
+		border-bottom:1px solid #b7d8ed;
+		border-top:1px solid #b7d8ed;
+		padding:5px;
+		background-color: #f8f8f8; 
+
+		
+	}
+	.dhtmlgoodies_aTabiPhone{
+		border-left:1px solid #b7d8ed;
+		border-right:1px solid #b7d8ed;
+		border-bottom:1px solid #b7d8ed;
+		border-top:1px solid #b7d8ed;
+		padding:5px;
+
+		
+	}
+	.dhtmlgoodies_tabPane DIV{
+		float:left;
+		padding-left:3px;
+		vertical-align:middle;
+		background-repeat:no-repeat;
+		background-position:bottom left;
+		cursor:pointer;
+		position:static;
+		bottom:-1px;
+		margin-left:0px;
+		margin-right:0px;
+	}
+	.dhtmlgoodies_tabPane .tabActive{
+		background-image:url('../images/tab_left_active.gif');
+		margin-left:0px;
+		margin-right:-0px;
+		padding-right:-3px;
+		z-index:10;	
+	}
+	.dhtmlgoodies_tabPane .tabInactive{
+		background-image:url('../images/tab_left_inactive.gif');
+		margin-left:0px;
+		margin-right:-5px;
+		z-index:1;
+	}
+
+	.dhtmlgoodies_tabPane .inactiveTabOver{
+		background-image:url('../images/tab_left_over.gif');
+		margin-left:0px;
+		margin-right:-5px;
+	
+	}
+	.dhtmlgoodies_tabPane span{
+		font-family:arial;
+		vertical-align:top;
+		font-size:12px;
+		padding-left:3px;
+		padding-right:3px;		
+		line-height:21px;
+		float:left;
+	}
+	.dhtmlgoodies_tabPane .tabActive span{
+		padding-bottom:1px;
+		line-height:20px;
+	}
+	
+	.dhtmlgoodies_tabPane img{
+		float:left;
+	}

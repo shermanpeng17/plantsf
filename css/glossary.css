@@ -1,0 +1,18 @@
+.glossary-term {
+    font-weight: bold;
+}
+
+.page-title {
+    font-size: 30px;
+}
+
+.glossary-term-container {
+    border-bottom: 1px dashed gray;
+}
+
+.page-title-container {
+    border-bottom: 3px solid #422410;
+    font-size: 30px;
+    margin-bottom: 25px;
+    line-height: 1.15em
+}

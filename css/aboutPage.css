@@ -1,0 +1,64 @@
+html {
+    font-size: 12px;
+}
+
+body {
+    background-color: white;
+}
+
+.about-section {
+    border: 2px solid rgb(185, 183, 183);
+    margin: 60px auto 0px auto;
+    max-width: 700px;
+}
+
+.intro-section {
+    margin-top: 20px;
+}
+
+.about-section h2 {
+    color: rgb(7, 107, 7);
+    font-weight: 200;
+    font-size: 2rem;
+    position: relative;
+}
+
+.each-row__one {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+}
+
+.each-row__two {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+}
+
+.each-row__one img {
+    max-width: 260px;
+    max-height: 195px;
+    border-radius: 15%;
+}
+
+.each-row__two img {
+    max-width: 260px;
+    max-height: 195px;
+    border-radius: 15%;
+}
+
+.about-header {
+    /* text-align: center; */
+    /* margin-left: 40px; */
+    position: absolute;
+    top: 50px;
+    font-size: 1.5rem;
+    
+}
+
+.about-header h1 {
+    color: rgb(73, 10, 10);
+    font-weight: bold;
+}
+
+.about-header h1 i {
+    color: green;
+}

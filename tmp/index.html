@@ -1,0 +1,754 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=2.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Document</title>
+
+        <!-- <script>var dojoConfig = { parseOnLoad: true };</script> -->
+
+        <!-- bootstrap style-->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <!-- bootstrap jquery and javascript -->
+        <script src="https://code.jquery.com/jquery-3.0.0.js" ></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+
+        <!-- polyfill -->
+        <!-- <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/js-polyfills/0.1.42/polyfill.js"></script> -->
+
+        <!-- arcgis api -->
+        <link rel="stylesheet" href="https://js.arcgis.com/4.11/esri/css/main.css">
+        <script src="https://js.arcgis.com/4.11/"></script>
+
+        <!-- stylesheet -->
+        <link rel="stylesheet" href="css/style.css">
+
+        <!-- messi -->
+        <link rel="stylesheet" href="assets/Messi-master/messi.min.css" />
+        <script src="assets/Messi-master/messi.min.js"></script>
+
+        <!-- New Font Awesome -->
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
+        integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+
+   
+        <!-- for transforming coordinates from one coor system to another -->
+        <script type="text/javascript" src="assets/proj4js/lib/proj4js-combined.js"></script>
+
+        <!-- javascript for bootstrap -->
+       
+            
+        
+        <!-- Tour -->
+        <!-- <script src="js/bootstrap-tour-standalone.min.js"></script>
+        <link rel="stylesheet" href="css/bootstrap-tour-standalone.min.css"> -->
+
+        <script>
+
+    </script>
+    </head>
+    <body>
+        <div id="dropDownButtonContainer"></div>
+
+        <div id="loadSpinner" style="display:none">
+                <i class="fa fa-spinner fa-spin fa-3x fa-fw"></i>
+        </div>
+        <div class="main">
+
+            <!-- Header Content -->
+            <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                <a class="navbar-brand" href="http://sfplanninggis.org/plantsfdev/">
+                </a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
+                    aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div id="navbarNavDropdown" class="navbar-collapse collapse">
+                    <ul class="navbar-nav mr-auto">
+
+                    </ul>
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link start-tour" href="#">Quick Tour</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link stepAbout" href="about.html">About</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link stepGlossary" href="glossary.html">Glossary</a>
+                        </li>
+                        <li class="nav-item stepResources">
+                            <a class="nav-link" href="resources.html">Resources</a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+
+            <!-- Body Content -->
+            <div id="mainContentShell">
+                <div class="container">
+                    <div class="search-section">
+                        <div class="row">
+                            <div class="search-container col-lg-9">
+                                <a class="navbar-brand" href="http://sfplanninggis.org/plantsfdev/">
+                                    <img class="logo stepWelcome" src="images/header-logo.png">
+                                </a>
+                                <div class="search-box">
+                                    <h2 class="header-title">
+                                        Search by plant or address
+                                    </h2>
+                                    <div id="search">
+                                        <form action ; id="addressForm"
+                                            onsubmit="clicked=false; theSearchType=null; isNeighborhood=false; isDistrict=false; showAddress(this.address.value); return false">
+                                            <input type="text" name="address" id="addressInput"
+                                                placeholder="Enter a plant or address" class="stepLocation">
+                                            <div id="searchButton">
+                                                <button class="searchButton" id="findButton" name="searchbox"
+                                                    onclick="clicked=false; theSearchType=null; isNeighborhood=false; isDistrict=false; showAddress(document.getElementById('addressInput').value);">
+                                                    <i class="fa fa-search"></i>
+                                                </button>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+
+                                <div class="row justify-content-between">
+                                    <div class="col-md-6">
+                                        <h2 class="header-title stepStartSerch">
+                                            View predefined plant lists
+                                        </h2>
+
+                                        <div id="plantCategories">
+                                            <div class="row">
+                                                <div id="preselected">
+                                                    <h3 class="category">Preselected: </h3>
+
+                                                    <!-- <div class="border"></div> -->
+                                                    <div class="buttons">
+                                                        <button class="btn btn-sm category-buttons" value="Habitat Plants">All Habitat
+                                                            Plants
+                                                        </button>
+                                                        <button class="btn btn-sm category-buttons" value="All Plants">
+                                                            Show All Plants
+                                                        </button>
+                                                        <button class="btn btn-sm category-buttons" value="SF Natives">
+                                                            SF Natives
+                                                        </button>
+                                                    </div>
+
+                                                </div>
+                                            </div>
+                                            <hr>
+
+                                            <div class="row">
+                                                <div id="cityList" class="stepCityLists">
+                                                    <h3 class="category">City List</h3>
+                                                    <a href="resources.html#plant-lists" title="Click here to learn more about the City List.">
+                                                        <img src="images/question-mark-green.jpg" alt="">
+                                                    </a>
+                                                    <!-- <div class="border"></div> -->
+                                                    <div class="buttons">
+                                                        <button class="btn btn-sm" value="Stormwater">
+                                                            Stormwater
+                                                        </button>
+                                                        <button class="btn btn-sm" value ="Urban Forest Council Street TreeList">
+                                                            Street
+                                                            Trees
+                                                        </button>
+                                                        <br>
+
+                                                        <button class="btn btn-sm" value="Thrifty150">
+                                                            Thrifty 150
+                                                        </button>
+                                                        <button class="btn btn-sm" value = "Sidewalk Landscaping">
+                                                            Sidewalk
+                                                            Landscaping
+                                                        </button>
+                                                    </div>
+
+                                                </div>
+                                            </div>
+                                            <hr>
+                                            <div class="row">
+                                                <div id="plantPalettes" class="stepPlantPalettes">
+                                                    <h3 class="category">Plant Palettes</h3>
+                                                    <a href="resources.html#plant-palettes" title="Click here to learn more about the Plant Palettes.">
+                                                        <img src="images/question-mark-green.jpg" alt="">
+                                                    </a>
+
+                                                    <!-- <div class="border"></div> -->
+                                                    <div class="buttons">
+                                                        <button class="btn btn-sm" value ="Sandy Soil">
+                                                            Sandy Soil
+                                                        </button>
+                                                        <button class="btn btn-sm" value = "Shady Clay">
+                                                            Shady Clay
+                                                        </button>
+                                                        <button class="btn btn-sm" value ="Super60">
+                                                            Super 60
+                                                        </button>
+                                                        <button class="btn btn-sm" value ="Top20">
+                                                            Top 20
+                                                        </button>
+                                                    </div>
+
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-5">
+                                        <h2 class="header-title">
+                                            Search By Map
+                                        </h2>
+
+                                        <!-- <div id="mapCell">
+                                            <div id="mapContainer" style="border-radius:10px;">
+                                                <div id="map_canvas" style="width:100%; height:230px; z-Index:10; ">
+                                                    <div style=" font-size:12px; position:absolute; right:60px; top:3px; z-Index:99;">
+                                                        
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div> -->
+                                        <div id="mapCell">
+                                            <div id="mapContainer" data-dojo-type="dijit/layout/BorderContainer" style="border-radius:10px;">
+                                                <div id="map_canvas" style="width:100%; height:230px; z-Index:10; ">
+                                                    <div id="basemap-dropdown">
+                                                        <select id="basemap-select">
+                                                            <option value="topo-vector">Topo-Vector</option>
+                                                            <option value="topo">Topo</option>
+                                                            <option value="streets">Streets</option>
+                                                            <option value="satellite">Satellite</option>
+                                                            <option value="green-connections">Green Connections</option>
+                                                            <option value="plant-communities">Plant Communities</option>
+
+                                                            
+                                                        </select>
+                                                    </div>
+                                                    <!-- <div style=" font-size:12px; position:absolute; right:60px; top:3px; z-Index:99;">
+                                                        <button type="button" class="btn btn-light btn-sm" id="dropdownButton" label="Maps"
+                                                            data-dojo-type="dijit/form/DropDownButton" data-dojo-props="region:'none'" style="border:0px">
+                                                            <div data-dojo-type="dijit/Menu" id="basemapMenu">
+                                                            </div>
+                                                        </button>
+                                                    </div> -->
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="container">
+                    <div class="search-result-section">
+                        <div class="row">
+                            <div class="intro-section col-lg-9">
+                                <div id="intro">
+                                    <img src="images/intro-graphic.png" alt="" width="230" height="230" align="right"
+                                        style="margin-left:35px;" />
+                                    <h1>What is SF Plant Finder?</h1>
+                                    <p>SF Plant Finder is a resource for gardeners, designers, ecologists and others
+                                        interested
+                                        in
+                                        greening
+                                        neighborhoods, enhancing our urban ecology and surviving the drought. The Plant
+                                        Finder
+                                        recommends
+                                        appropriate plants for sidewalks, private backyards and roofs that are adapted
+                                        to
+                                        San
+                                        Francisco's unique
+                                        environment, climate and habitats. <br> </p>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+
+
+
+                <!-- End TOP SEARCH -->
+
+
+
+                <!-- BOTTOM RESULTS / DETAILS -->
+                <div class="row" id="search-results" style="display: none">
+                    <a name='theTop'></a>
+
+                    <div class="modal fade" id="plantInfoModal" tabindex="-1" role="dialog" aria-label="PlantSFModalLabel"
+                        aria-hidden="true">
+                        <div class="modal-dialog modal-lg" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="modalTitle"></h5>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+                                <div class="modal-body" id="plantInfoModelContent">
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Filter Results Popup Window -->
+                    <div class="container">
+                        <div class="row">
+                            <div id="filterSection" class="col-md-2 col-sm-12" style="visibility: hidden">
+                                <div class="bg-light filter-container rounded p-3 ">
+                                    <h3 id="filterHeader" class="stepfilter">Filter</h3>
+
+                                        <h6 class="filterCategory">
+                                            <a class="accordion-toggle" data-toggle="collapse" href="#nativeType" aria-expanded="false" aria-controls="nativeType">
+                                                Native
+                                            </a>
+                                        </h6>
+                                            
+                                        <div class="collapse show" id="nativeType">
+                                            <div class="custom-control custom-checkbox">
+                                                <input type="checkbox" class="custom-control-input" id='native1'
+                                                    name="native" value="San Francisco">
+                                                <label class="custom-control-label" for="native1">San Francisco</label>
+                                            </div>
+                                            <div class="custom-control custom-checkbox">
+                                                <input type="checkbox" class="custom-control-input" id='native2'
+                                                    name="native" value="California">
+                                                <label class="custom-control-label" for="native2">California</label>
+                                            </div>
+                                        </div>
+                                        <hr>
+                                        <!-- End Native -->
+
+                                        <!-- Water Needs -->
+                                        <h6 class="filterCategory">
+                                            <a class="accordion-toggle" data-toggle="collapse" href="#wateringType" aria-expanded="false" aria-controls="wateringType">
+                                                Water Needs
+                                            </a>
+                                        </h6>
+                                        <div class=" show" id="wateringType">
+                                            <div class="custom-control custom-checkbox">
+                                                <input type="checkbox" class="custom-control-input" id='watering1'
+                                                    name="wateringNeeds" value="None">
+                                                <label class="custom-control-label" for="watering1">None.</label>
+                                            </div>
+
+                                            <div class="custom-control custom-checkbox">
+                                                <input type="checkbox" class="custom-control-input" id='watering2'
+                                                    name="wateringNeeds" value="Low">
+                                                <label class="custom-control-label" for="watering2">Low.</label>
+                                            </div>
+
+                                            <div class="custom-control custom-checkbox">
+                                                <input type="checkbox" class="custom-control-input" id='watering3'
+                                                    name="wateringNeeds" value="Moderate">
+                                                <label class="custom-control-label" for="watering3">Moderate</label>
+                                            </div>
+                                        </div>
+                                        <hr>
+                                        <!-- End Watering Needs -->
+
+
+                                        <!-- Soil Type -->
+                                        <h6 class="filterCategory">
+                                            <a class="accordion-toggle" data-toggle="collapse" href="#soilType" aria-expanded="false" aria-controls="soilType">
+                                                Soil Type
+                                            </a>									
+                                        </h6>
+                                        <div class=" show" id="soilType">
+                                            <div class="custom-control custom-checkbox">
+                                                <input type="checkbox" class="custom-control-input" id='soil1'
+                                                    name="soilValue" value="Clay">
+                                                <label class="custom-control-label" for="soil1">Clay</label>
+                                            </div>
+
+                                            <div class="custom-control custom-checkbox">
+                                                <input type="checkbox" class="custom-control-input" id='soil2'
+                                                    name="soilValue" value="Loam">
+                                                <label class="custom-control-label" for="soil2">Loam</label>
+                                            </div>
+
+                                            <div class="custom-control custom-checkbox">
+                                                <input type="checkbox" class="custom-control-input" id='soil3'
+                                                    name="soilValue" value="Sand">
+                                                <label class="custom-control-label" for="soil3">Sand</label>
+                                            </div>
+
+                                            <div class="custom-control custom-checkbox">
+                                                <input type="checkbox" class="custom-control-input" id='soil4'
+                                                    name="soilValue" value="Rock">
+                                                <label class="custom-control-label" for="soil4">Rock</label>
+                                            </div>
+                                        </div>
+                                        <hr>
+                                        <!-- End Soil Type -->
+
+
+
+
+                                        <!-- Site Conditions -->
+                                        <h6 class="filterCategory">
+                                            <a class="accordion-toggle" data-toggle="collapse" href="#siteType" aria-expanded="false" aria-controls="siteType">
+                                                Site Conditions
+                                            </a>
+                                        </h6>
+
+                                        <div class=" show" id="siteType">
+                                            <div class="custom-control custom-checkbox">
+                                                <input type="checkbox" class="custom-control-input" id='sitecond1'
+                                                    name="sitecondValue" value="Sun">
+                                                <label class="custom-control-label" for="sitecond1">Sun</label>
+                                            </div>
+                                            <div class="custom-control custom-checkbox">
+                                                <input type="checkbox" class="custom-control-input" id='sitecond2'
+                                                    name="sitecondValue" value="PartShade">
+                                                <label class="custom-control-label" for="sitecond2">Part Shade</label>
+                                            </div>
+                                            <div class="custom-control custom-checkbox">
+                                                <input type="checkbox" class="custom-control-input" id='sitecond3'
+                                                    name="sitecondValue" value="Shade">
+                                                <label class="custom-control-label" for="sitecond3">Shade</label>
+                                            </div>
+                                        </div>
+                                        <hr>
+                                        <!-- End Site Conditions -->
+
+                                        <!-- Habitat Value -->
+
+                                        <h6 class="filterCategory">
+                                            <a class="accordion-toggle" data-toggle="collapse" href="#habitatValue" aria-expanded="false" aria-controls="habitatValue">
+                                                Habitat Value
+                                            </a>									
+                                        </h6>
+                                        <div class=" show" id="habitatValue">
+                                            <div class="custom-control custom-checkbox">
+                                                <input type="checkbox" class="custom-control-input" id='habitat1'
+                                                    name="habitatValue" value="Buds/Greens">
+                                                <label class="custom-control-label" for="habitat1">Buds/Green</label>
+                                            </div>
+                                            <div class="custom-control custom-checkbox">
+                                                <input type="checkbox" class="custom-control-input" id='habitat2'
+                                                    name="habitatValue" value="Cover">
+                                                <label class="custom-control-label" for="habitat2">Cover</label>
+                                            </div>
+                                            <div class="custom-control custom-checkbox">
+                                                <input type="checkbox" class="custom-control-input" id='habitat3'
+                                                    name="habitatValue" value="Fruit">
+                                                <label class="custom-control-label" for="habitat3">Fruit</label>
+                                            </div>
+                                            <div class="custom-control custom-checkbox">
+                                                <input type="checkbox" class="custom-control-input" id='habitat4'
+                                                    name="habitatValue" value="Pollinator">
+                                                <label class="custom-control-label" for="habitat4">Pollinator</label>
+                                            </div>
+                                            <div class="custom-control custom-checkbox">
+                                                <input type="checkbox" class="custom-control-input" id='habitat5'
+                                                    name="habitatValue" value="Nesting">
+                                                <label class="custom-control-label" for="habitat5">Nesting</label>
+                                            </div>
+                                            <div class="custom-control custom-checkbox">
+                                                <input type="checkbox" class="custom-control-input" id='habitat6'
+                                                    name="habitatValue" value="Multiple">
+                                                <label class="custom-control-label" for="habitat6">Multiple</label>
+                                            </div>
+                                        </div>
+                                        <hr>
+
+                                        <!-- End Habitat Value -->
+
+                                        <!-- Plant Type -->
+
+                                        <h6 class="filterCategory">
+                                            <a class="accordion-toggle" data-toggle="collapse" href="#plantType" aria-expanded="false" aria-controls="plantType">
+                                                Plant Type
+                                            </a>									
+                                        </h6>
+
+                                        <div id="plantType" class=" show">
+                                            <div class="custom-control custom-checkbox">
+                                                <input type="checkbox" class="custom-control-input" id="type1"
+                                                    value="Annual">
+                                                <label class="custom-control-label" for="type1">Annual</label>
+                                            </div>
+                                            <div class="custom-control custom-checkbox">
+                                                <input type="checkbox" class="custom-control-input" id="type2"
+                                                    value="Grass">
+                                                <label class="custom-control-label" for="type2">Grass</label>
+                                            </div>
+                                            <div class="custom-control custom-checkbox">
+                                                <input type="checkbox" class="custom-control-input" id="type3"
+                                                    value="Perennial">
+                                                <label class="custom-control-label" for="type3">Perennial</label>
+                                            </div>
+                                            <div class="custom-control custom-checkbox">
+                                                <input type="checkbox" class="custom-control-input" id="type4"
+                                                    value="Shrub (Evergreen)">
+                                                <label class="custom-control-label" for="type4">Shrub
+                                                    (Evergreen)</label>
+                                            </div>
+                                            <div class="custom-control custom-checkbox">
+                                                <input type="checkbox" class="custom-control-input" id="type5"
+                                                    value="Shrub (Deciduous)">
+                                                <label class="custom-control-label" for="type5">Shrub
+                                                    (Deciduous)</label>
+                                            </div>
+                                            <div class="custom-control custom-checkbox">
+                                                <input type="checkbox" class="custom-control-input" id="type6"
+                                                    value="Tree (Evergreen)">
+                                                <label class="custom-control-label" for="type6">Tree (Evergreen)
+                                                </label>
+                                            </div>
+                                            <div class="custom-control custom-checkbox">
+                                                <input type="checkbox" class="custom-control-input" id="type7"
+                                                    value="Tree (Deciduous)">
+                                                <label class="custom-control-label" for="type7">Tree (Deciduous)</label>
+                                            </div>
+                                            <div class="custom-control custom-checkbox">
+                                                <input type="checkbox" class="custom-control-input" id="type8" value="Vine">
+                                                <label class="custom-control-label" for="type8">Vine</label>
+                                            </div>
+                                            <div class="custom-control custom-checkbox">
+                                                <input type="checkbox" class="custom-control-input" id="type9" value="Fern">
+                                                <label class="custom-control-label" for="type9">Fern</label>
+                                            </div>
+                                            <div class="custom-control custom-checkbox">
+                                                <input type="checkbox" class="custom-control-input" id="type10"
+                                                    value="Succulent">
+                                                <label class="custom-control-label" for="type10">Succulent</label>
+                                            </div>
+                                        </div>
+                                        <hr>
+
+                                        <!-- End Plant Type -->
+
+                                        <!-- Bloom Time -->
+                                        <h6 class="filterCategory">
+                                            <a class="accordion-toggle" data-toggle="collapse" href="#bloomTime" aria-expanded="false" aria-controls="bloomTime">
+                                                Bloom Time
+                                            </a>	
+
+                                        </h6>
+
+                                        <div class=" show" id="bloomTime">
+                                            <div class="custom-control custom-checkbox">
+                                                <input type="checkbox" class="custom-control-input" id='bloom1'
+                                                    name="bloomTime" value="Winter">
+                                                <label class="custom-control-label" for="bloom1">Winter</label>
+                                            </div>
+                                            <div class="custom-control custom-checkbox">
+                                                <input type="checkbox" class="custom-control-input" id='bloom2'
+                                                    name="bloomTime" value="Spring">
+                                                <label class="custom-control-label" for="bloom2">Spring</label>
+                                            </div>
+                                            <div class="custom-control custom-checkbox">
+                                                <input type="checkbox" class="custom-control-input" id='bloom3'
+                                                    name="bloomTime" value="Summer">
+                                                <label class="custom-control-label" for="bloom3">Summer</label>
+                                            </div>
+                                            <div class="custom-control custom-checkbox">
+                                                <input type="checkbox" class="custom-control-input" id='bloom4'
+                                                    name="bloomTime" value="Fall">
+                                                <label class="custom-control-label" for="bloom4">Fall</label>
+                                            </div>
+                                        </div>
+                                        <hr>
+                                        <!-- End Bloom Time -->
+
+                                        <!-- Size at Maturity -->
+                                        <h6 class="filterCategory">
+                                            <a class="accordion-toggle" data-toggle="collapse" href="#maturityType" aria-expanded="false" aria-controls="maturityType">
+                                                Maturity Size
+                                            </a>										
+                                        </h6>
+                                        <div class=" show" id="maturityType">
+                                            <div class="custom-control custom-checkbox">
+                                                <input type="checkbox" class="custom-control-input" id='size1'
+                                                    name="sizeAtMaturity" value="< 1 ft">
+                                                <label class="custom-control-label" for="size1">
+                                                    < 1 ft.</label> </div> <div class="custom-control custom-checkbox">
+                                                        <input type="checkbox" class="custom-control-input" id='size2'
+                                                            name="sizeAtMaturity" value="1-3ft">
+                                                        <label class="custom-control-label" for="size2">1-3 ft.</label>
+                                            </div>
+                                            <div class="custom-control custom-checkbox">
+                                                <input type="checkbox" class="custom-control-input" id='size3'
+                                                    name="sizeAtMaturity" value="4-6ft">
+                                                <label class="custom-control-label" for="size3">4-6 ft.</label>
+                                            </div>
+                                            <div class="custom-control custom-checkbox">
+                                                <input type="checkbox" class="custom-control-input" id='size4'
+                                                    name="sizeAtMaturity" value="7-12ft">
+                                                <label class="custom-control-label" for="size4">7-12 ft.</label>
+                                            </div>
+
+                                            <div class="custom-control custom-checkbox">
+                                                <input type="checkbox" class="custom-control-input" id='size5'
+                                                    name="sizeAtMaturity" value="13-24ft">
+                                                <label class="custom-control-label" for="size5">13-24ft.</label>
+                                            </div>
+                                            <div class="custom-control custom-checkbox">
+                                                <input type="checkbox" class="custom-control-input" id='size6'
+                                                    name="sizeAtMaturity" value="Above 24ft">
+                                                <label class="custom-control-label" for="size6">> 24 ft.</label>
+                                            </div>
+                                        </div>
+                                        <hr>
+                                        <!-- End Size at Maturity -->
+
+                                        <!-- Appropriate Location -->
+                                        <h6 class="filterCategory">
+                                            <a class="accordion-toggle" data-toggle="collapse" href="#appropriateLocationType" aria-expanded="false" aria-controls="appropriateLocationType">
+                                                Appropriate Location
+                                            </a>	
+                                        </h6>
+                                        <div class=" show" id="appropriateLocationType">
+                                            <div class="custom-control custom-checkbox">
+                                                <input type="checkbox" class="custom-control-input" id='approp1'
+                                                    name="appropriateLocation" value="Garden">
+                                                <label class="custom-control-label" for="approp1">Garden</label>
+                                            </div>
+                                            <div class="custom-control custom-checkbox">
+                                                <input type="checkbox" class="custom-control-input" id='approp2'
+                                                    name="appropriateLocation" value="Streetscape">
+                                                <label class="custom-control-label" for="approp2">Sidewalk</label>
+                                            </div>
+                                            <div class="custom-control custom-checkbox">
+                                                <input type="checkbox" class="custom-control-input" id='approp4'
+                                                    name="appropriateLocation" value="Roof">
+                                                <label class="custom-control-label" for="approp4">Roof</label>
+                                            </div>
+                                            <div class="custom-control custom-checkbox">
+                                                <input type="checkbox" class="custom-control-input" id='approp5'
+                                                    name="appropriateLocation" value="Stormwater">
+                                                <label class="custom-control-label" for="approp5">Stormwater</label>
+                                            </div>
+                                            <div class="custom-control custom-checkbox">
+                                                <input type="checkbox" class="custom-control-input" id='approp6'
+                                                    name="appropriateLocation" value="Potted Plants">
+                                                <label class="custom-control-label" for="approp6">Potted Plants</label>
+                                            </div>
+                                        </div>
+                                        <hr>
+                                        <!-- End Appropriate Location -->
+
+                                        <button onclick="clearCheckboxes() ; filterResults() ">Clear Filter</button>
+
+
+
+                                </div>
+                            </div>
+                            <!-- Search Results -->
+                            <div id="searchResultsDisplay" class="col-md-8 col-sm-12 bg-light" style="visibility:hidden">
+                                <div id="searchResultsSummary">
+                                </div>
+                                <hr>
+                                <div class="toolbar-search" id='printResultsLink' style='visibility:hidden;'><a
+                                        class="print" href="javascript:void(0);"
+                                        onclick="printResults('search-category');">Print</a>
+                                </div>
+
+                                <div id='plantlist'></div>
+
+                                <div id="greenConnectionsList"></div>
+
+                                <div id='plantinfo2'></div>
+                            </div>
+                            <div id="shopping-cart" class="col-md-2 col-sm-12">
+                                <div class="bg-light shadow-md rounded p-3 ">
+                                    <div id="shopping-cart-header">
+                                        <div>
+                                            <h3 class="stepCustomList">Custom List</h3>
+                                        </div>
+                                        <div class="toolbar-search" id='printResultsLink'><a class="print"
+                                                href="javascript:void(0);"
+                                                onclick="printResults('shopping-list');">Print</a>
+                                        </div>
+                                    </div>
+
+                                    <hr>
+                                    <ul id="plant-shopping-list">
+
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id='plantlist'>
+
+                    </div>
+                    <div id="greenConnectionsList">
+                    </div>
+
+                    <div id='plantinfo2'></div>
+
+                    <!-- /HOMEPAGE INTRO -->
+
+                    <!-- Search Results -->
+
+                </div>
+
+
+            </div>
+            <!-- End Right Column -->
+
+            <!-- End mainContent -->
+        </div>
+        <br>
+
+        <!-- End Footer Content -->
+        <!-- End mainContentShell -->
+        <!-- Footer Content -->
+        <footer id="footerShell">
+            <div id="footerContent" style="display:flex">
+                <div class="left">&copy; 2017 City and County of San Francisco.<br />
+                    This site is brought to you by the following city agencies and <br />
+                    a grant from the California Strategic Growth Council.</div>
+                <div class="right"><img src="images/dept-logos.png" width="690" height="64" border="0" usemap="#agencies" />
+                    <map name="agencies" id="agencies">
+                        <area shape="rect" coords="105,8,227,62" href="http://www.sfplanning.org" target="_blank"
+                            alt="San Francisco Planning Department" />
+                        <area shape="rect" coords="630,2,694,61" href="http://www.sfdpw.org" target="_blank"
+                            alt="San Francisco Department of Public Works" />
+                        <area shape="rect" coords="273,0,369,64" href="http://www.sfenvironment.org" target="_blank"
+                            alt="SF Environment" />
+                        <area shape="rect" coords="409,8,591,60" href="http://www.sfwater.org" target="_blank"
+                            alt="SF Public Utilities Commission" />
+                    </map>
+
+                </div>
+            </div>
+        </footer>
+
+        <!-- <script src="jQuery/Messi-master/messi.min.js"></script>
+        <script src="js/tour.js"></script> -->
+
+
+        <script src="./src/app.js"></script>
+
+
+        
+
+
+        <!-- <script
+            type="text/javascript">stLight.options({ publisher: "e7c430c3-d9e1-480a-9070-717ba145d20e", doNotHash: false, doNotCopy: false, hashAddressBar: false });</script>
+        <script>
+            var options = { "publisher": "e7c430c3-d9e1-480a-9070-717ba145d20e", "ad": { "visible": false, "openDelay": "5", "closeDelay": "0" }, "livestream": { "domain": "", "type": "sharethis" }, "ticker": { "visible": false, "domain": "", "title": "", "type": "sharethis" }, "facebook": { "visible": false, "profile": "sharethis" }, "fblike": { "visible": false, "url": "" }, "twitter": { "visible": false, "user": "sharethis" }, "twfollow": { "visible": false }, "custom": [{ "visible": false, "title": "Custom 1", "url": "", "img": "", "popup": false, "popupCustom": { "width": 300, "height": 250 } }, { "visible": false, "title": "Custom 2", "url": "", "img": "", "popup": false, "popupCustom": { "width": 300, "height": 250 } }, { "visible": false, "title": "Custom 3", "url": "", "img": "", "popup": false, "popupCustom": { "width": 300, "height": 250 } }], "chicklets": { "items": ["facebook", "twitter", "pinterest", "googleplus"] } };
+            var st_bar_widget = new sharethis.widgets.sharebar(options);
+        </script> -->
+
+
+    </body>
+</html>

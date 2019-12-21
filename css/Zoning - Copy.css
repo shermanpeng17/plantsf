@@ -1,0 +1,743 @@
+html,body
+{ 
+  margin: 0px;
+	padding: 0px;
+	background: #FFFFFF;
+	font: 11pt Tahoma, Arial, sans-serif;
+	height:99.7%;
+}
+body TD
+{
+  FONT-SIZE: 8pt;
+  FONT-FAMILY: Verdana;
+  vertical-align: top;
+
+}
+
+#cityHeader {	color:#BCCDE4; }
+#fullheight{height:100%}
+#appHeader1a
+{
+	font-size: 22px;
+	font-family:Arial, Helvetica, sans-serif;
+	
+  	color: #5587A6;
+	padding-left: 12px;
+	background-color: #E4EDF3;
+	white-space:nowrap;
+	border-top: 1px solid #B7D8ED;
+	border-bottom: 1px solid #B7D8ED;
+	border-left: 1px solid #B7D8ED;
+}
+#appHeader1b
+{	
+  font-size: 8pt;
+  color: #5587A6;
+  padding-right: 5px;
+  background-color: #E4EDF3;
+  text-align:right;
+  border-top: 1px solid #B7D8ED;
+  border-bottom: 1px solid #B7D8ED;
+  border-right: 1px solid #B7D8ED;
+}
+#appHeader1c
+{	
+  font-size: 8pt;
+  color: #5587A6;
+  padding-right: 5px;
+  width:100%;
+  text-align:center;
+  
+}
+#appHeader1b A:link {color: #5587A6; text-decoration: underline; font-weight: normal;}
+#appHeader1b A:visited {color: #5587A6; text-decoration: underline; font-weight: normal;}
+#appHeader1b A:hover {color: #5587A6; text-decoration: none; font-weight: normal;}
+#appHeader1b A:visited:hover {color: #5587A6; text-decoration: none; font-weight: normal;}
+
+#divLoading
+{
+  padding: 10px;
+  z-index: 100;
+  color: Black;
+  font-family: Arial;
+  font-size: 10pt;
+  background-color: White
+}
+
+#leftPane
+{
+  background-color : WHITE;
+  position: absolute;
+  visibility: hidden;
+  border-top: 1px solid #B7D8ED;
+  overflow:hidden;
+}
+
+#searchPane
+{
+  background-color : #F7FBFB;
+  border-left: 1px solid #B7D8ED;
+  border-right: 1px solid #B7D8ED;
+  border-bottom: 1px solid #B7D8ED;
+  position: relative;
+}
+
+#scrollbar
+{
+  position: absolute;
+}
+
+#scroller
+{
+  position: relative;
+  border-top: 1px solid #B7D8ED;
+  border-right: 1px solid #B7D8ED;
+  border-bottom: 1px solid #B7D8ED;
+  background-color: #E4EDF3;
+  cursor: pointer;
+}
+
+#scrollThumb
+{
+  position: relative;
+  padding-left: 5px;
+}
+
+#resizePaneHorz
+{
+  position: absolute;
+  cursor: pointer;
+}
+
+#resizerHorz
+{
+  position: relative;
+  width: 10px;
+}
+
+#resizerThumbHorz
+{
+  padding:0px;
+  position: relative;
+}
+
+#resizePaneVert
+{
+  position: absolute;
+  cursor:pointer;
+}
+
+#resizerVert
+{
+  position: relative;
+  width: 10px;
+}
+
+#resizerThumbVert
+{
+  padding:0px;
+  position:relative;
+  width: 100px;
+  font-size: 10pt;
+}
+
+#mapPane
+{
+  background-color : WHITE;
+  border: 1px solid #B7D8ED;
+  position: absolute;
+  overflow:hidden;
+}
+@media print
+{
+	#mapPane
+	{
+		left:0px !important;
+	}
+}
+
+#map
+{
+  position: absolute;
+}
+
+#map_vemessagepanel, #obliqueNotification, #threeDNotification {visibility:hidden;}
+
+#gridPane
+{
+  position: absolute;
+  display: none;
+  overflow: hidden;
+  border-left: 1px solid #B7D8ED;
+  border-right: 1px solid #B7D8ED;
+  border-bottom: 1px solid #B7D8ED;
+}
+
+#gridPane table { empty-cells: show; border-collapse: collapse; }
+#gridPane table TBODY { height:100%; }
+
+.radGridContainer
+{
+  display: none;
+  WIDTH: 100%; 
+  HEIGHT: 200px;
+}
+
+#loading
+{
+  position: absolute;
+  font-size: 11pt;  /*08/13/2007- modified font-size from 9 to 14 */
+  font-weight: bold;
+  color: Black;  /*08/13/2007- changed font color from DarkGray to Black */
+  background-color: White;
+  padding: 5px 5px 5px 5px;
+  border: 1px solid #B7D8ED;
+  visibility: hidden;
+  vertical-align: middle;
+  z-index:10;
+  filter: progid:DXImageTransform.Microsoft.Alpha(style=1,opacity=80,finishOpacity=80);
+}
+
+/*#infoPane		//08/09/2007- moved code to inline in div.  see Default.aspx.
+{
+  position: absolute;
+  background-color: Transparent;
+  height: 24px;
+  font-size: 10pt;
+  color: #4B4B4B;
+  white-space: nowrap;
+  visibility: hidden;
+}*/
+
+#infoPane A:link {color: #4B4B4B; text-decoration: none;}
+#infoPane A:visited {color: #4B4B4B; text-decoration: none;}
+#infoPane A:hover {color: #0088E4; text-decoration: underline;}
+#infoPane A:visited:hover {color: #0088E4; text-decoration: underline;}
+
+/*#copyrightPane	//08/09/2007- moved code to inline in div.  see Default.aspx.
+{
+  position: relative;
+  float: left;
+  padding-top: 5px;
+  visibility: hidden; //added to hide div 08/08/2007
+}*/
+
+/*#internalfooter	//added to accommodate new internal web site footer 08/08/2007
+{
+  position: relative;
+  float: left;
+  padding-top: 5px;
+  text-align: center;
+}*/
+
+/*#linkPane
+{
+  position: relative;
+  float: right;
+  padding-top: 5px;
+  padding-right: 5px;
+  visibility: hidden; //added to hide div 08/08/2007
+}*/
+
+#divAlert
+{
+  position: absolute;
+  z-index: 1000;
+  color: Black;
+  font-family: Verdana;
+  font-size: 8pt;
+  background-color: lightyellow;
+  border: 2px solid black;
+  width:180px;
+  display:none;
+  filter: progid:DXImageTransform.Microsoft.Shadow(color=gray,strength=4,direction=135);
+}
+
+#divAlertImg
+{
+   height: 16px;
+   background-color: #B7D8ED;
+   float:left;
+   padding:3px;
+}
+
+#divAlertHeader
+{
+  background-color: #B7D8ED;
+  padding:3px;
+  font-weight: bold;
+}
+#divAlertHeader2
+{
+  height:16px;
+  background-color: #B7D8ED;
+  vertical-align: middle;
+}
+
+#divAlertTitle
+{
+  float:left;
+}
+#divAlertClose
+{
+  float:right;
+  vertical-align: middle;
+}
+
+#divAlertMsg
+{
+  border-top: 1px solid #0088E4;
+  padding:5px;
+}
+
+.searchPaneSectionHeader
+{
+  color: #888888;
+  font-family: Verdana;
+  font-size: 9pt;
+  font-weight: bold;
+  padding: 5px;
+
+
+}
+
+.searchPaneSectionBody
+{
+  color: Black;
+  font-family: Verdana;
+  font-size: 8pt;
+  padding: 5px;
+  border-top: 1px solid #B7D8ED;
+}
+
+.searchPaneSectionBodyTop
+{
+  color: Black;
+  font-family: Verdana;
+  font-size: 8pt;
+  padding: 5px;
+  border-bottom: 1px solid #B7D8ED;
+
+}
+
+.searchPaneCategoryHeader
+{
+  font-family: Verdana;
+  font-size: 8pt;
+  padding: 3px;
+  margin: 5px 3px 0px 3px;
+  background-color: #E4EDF3;
+  border: 1px solid #B7D8ED;
+}
+
+.searchPaneCategoryBody
+{
+  font-family: Verdana;
+  font-size: 8pt;
+  padding: 5px;
+  vertical-align: middle;
+  margin: 0px 3px 3px 3px;
+  background-color: WHITE;
+  border-left: solid 1px #B7D8ED;
+  border-right: solid 1px #B7D8ED;
+  border-bottom: solid 1px #B7D8ED;
+}
+
+.searchPaneCategoryBodyItem
+{
+  padding: 2px 0px 2px 2px;
+}
+
+.searchPaneCategoryBodyPin
+{
+  padding: 3px 0px 3px 3px;
+}
+
+.searchPaneCategoryBodyPinItem
+{
+  padding: 3px 3px 3px 0px;
+}
+
+.searchPaneCategoryBodyItemLabel
+{
+  padding: 2px;
+  text-align: right;
+}
+
+.searchPaneText
+{
+  font-family: Verdana;
+  font-size: 8pt;
+  padding: 3px;
+}
+
+.txtSearchCell
+{
+  border-top: 1px solid #4A7D9C;
+  border-left: 1px solid #4A7D9C;
+  border-bottom: 1px solid #4A7D9C;
+  height: 18px;
+}
+
+.imgSearchCell
+{
+  width: 28px;
+  height: 18px;
+  border-top: 1px solid #4A7D9C;
+  border-right: 1px solid #4A7D9C;
+  border-bottom: 1px solid #4A7D9C;
+}
+
+#txtSearch
+{
+  border: 0px;
+  font-size: 8pt;
+  width: 208px;
+  padding-left: 5px;
+}
+
+#btnSearch
+{
+  background: url(images/btn_bg.png);
+  background-repeat: repeat-x;
+  height: 30px;
+  border: 1px solid #4A7D9C;
+  font-size: 8pt;
+  margin-top: 3px;
+  margin-bottom: 3px;
+}
+
+#divSearchCriteria0
+{
+  display: none;
+}
+#divSearchCriteria1
+{
+  display: none;
+}
+#divSearchCriteria2
+{
+  display: none;
+}
+#divSearchCriteria3
+{
+  display: none;
+}
+
+.po {padding: 2px; font-size: 8pt; letter-spacing: 1px; line-height:16px; }
+
+.po A:link {color: #004894; text-decoration: none;}
+.po A:visited {color: #004894; text-decoration: none;}
+.po A:hover {color: #0088E4; text-decoration: underline;}
+.po A:visited:hover {color: #0088E4; text-decoration: underline;}
+
+.po ul {list-style: none; margin: 0; padding: 0; }
+.po li {padding-left: 8px; background-image: url(images/listarrw.gif); background-repeat: no-repeat; background-position:0px 6px; }
+
+#miniMap
+{
+  margin-top: 10px;
+  background-color : WHITE;
+  border: 1px solid #B7D8ED;
+  width: 220px;
+  height: 165px;
+}
+
+#divHelp
+{
+  height:300px;
+}
+
+#divHelp A:link {color: #4B4B4B; text-decoration: none;}
+#divHelp A:visited {color: #4B4B4B; text-decoration: none;}
+#divHelp A:hover {color: #0088E4; text-decoration: underline;}
+#divHelp A:visited:hover {color: #0088E4; text-decoration: underline;}
+
+#divHelpNav
+{
+  width:100%;
+  padding:3px;
+}
+
+#divHelpPageNext
+{
+  position: absolute;
+  top: 310px;
+  left: 425px;
+}
+
+#divHelpPagePrev
+{
+  position: absolute;
+  top: 310px;
+  left: 400px;
+}
+
+#divMapLayerButton
+{
+  position: absolute;
+  top: 13px;
+  z-index: 500;
+  display: none;
+}
+
+#divMapLayerContainer
+{
+  position: absolute;
+  z-index: 500;
+  border: 1px solid #CBCBCB;
+  padding: 3px;
+  top: 12px;
+  width: 240px;
+  height: 230px;
+  overflow-y: scroll;
+  overflow: -moz-scrollbars-vertical;
+  background-color: White;
+  font-size: 8pt; 
+  letter-spacing: 1px; 
+  line-height: 16px;
+  background-attachment: fixed;
+  background-image: url(images/divMapLayerContainer_bg.png);
+  background-repeat: no-repeat;
+  background-position: bottom right;
+  display: none;
+}
+
+.pinParcel
+{
+  position: absolute;
+  top: -20px;
+  left:1px;
+}
+
+.pinParcelTitle
+{
+  color: Black;
+  font-weight: bold;
+}
+
+.pinParcelTextHeader
+{
+  background-image: url(images/pop_head_bg.png);
+  padding: 2px;
+  width: 100%;
+  font-weight: bold;
+  background-repeat: no-repeat;
+}
+
+.pinParcelLabel
+{
+  width:1%;
+  white-space: nowrap;
+  text-align: right; 
+}
+
+.gridContainer
+{
+  height: 99%;
+  display: none;
+  width:100%;
+  position:relative;
+}
+
+/* Smaller button for use within a data grid */
+.gridbutton 
+{
+	border-bottom: 1px solid #8c8c8c;
+	border-top: 1px solid #c2c2c2;
+	border-left: 1px solid #a1a1a1;
+	border-right: 1px solid #a1a1a1;
+	background: url('/DPD/RadControls/Editor/Skins/DPD/CssImg/toolOnbg.gif');
+	font:normal 7pt Tahoma;
+	white-space:nowrap;
+	height:17px;
+	width:45px;
+}
+
+th.GridHeader_DPD,
+th.ResizeHeader_DPD
+{
+	font: bold 8pt Arial, Verdana, Sans-serif;
+	background: #D9E4F1 url('/DPD/RadControls/Grid/Skins/DPD/Img/GridHeaderBg.gif') repeat-x bottom;
+	border-top: solid 1px #BCCDE4;
+	border-left: solid 0px #BCCDE4;
+	border-right: solid 1px #BCCDE4;
+	border-bottom: solid 1px #BCCDE4;
+	padding-left: 6px; /*more than items to compensate for item borders!*/
+	padding-right: 5px;
+	height: 22px;
+	text-align:left;
+}
+
+/* DPD: Pass class down to cells when styling a normal datagrid */
+.GridHeader_DPD td,
+.GridHeader_DPD th
+{
+	font: bold 8pt Arial, Verdana, Sans-serif;
+	background: #D9E4F1 url('/DPD/RadControls/Grid/Skins/DPD/Img/GridHeaderBg.gif') repeat-x bottom;
+	border-top: solid 1px #BCCDE4;
+	border-left: solid 0px #BCCDE4;
+	border-right: solid 1px #BCCDE4;
+	border-bottom: solid 1px #BCCDE4;
+	padding-left: 6px; /*more than items to compensate for item borders!*/
+	padding-right: 5px;
+	height: 22px;
+	text-align:left;
+	cursor: pointer;
+}
+
+.GridHeader_DPD {font-weight:bold; color: #31639C; font-size:8pt;}
+.GridHeader_DPD A:link { color:#31639C; font-weight:bold; text-decoration: none;}
+.GridHeader_DPD A:visited {color:#31639C; font-weight:bold; text-decoration: none;}
+.GridHeader_DPD A:hover {color:#31639C; font-weight:bold; text-decoration: underline;}
+.GridHeader_DPD A:visited:hover {color:#31639C; font-weight:bold; text-decoration: underline;}
+
+.GridFooter_DPD td,
+.GridFooter_DPD th
+{
+	font: bold 8pt Arial, Verdana, Sans-serif;
+	background: #D9E4F1 url('/DPD/RadControls/Grid/Skins/DPD/Img/GridHeaderBg.gif') repeat-x bottom;
+	border-top: solid 1px #BCCDE4;
+	border-left: solid 0px #BCCDE4;
+	border-right: solid 1px #BCCDE4;
+	border-bottom: solid 1px #BCCDE4;
+	padding-left: 6px; /*more than items to compensate for item borders!*/
+	padding-right: 5px;
+	height: 22px;
+	text-align:left;
+	cursor: pointer;
+}
+
+/* DPD: Pass class down to cells when styling a normal datagrid */
+.GridRow_DPD,
+.GridRow_DPD td
+{
+	background: #f7f7f7;
+	height: 22px;
+	border: solid 0px #f7f7f7;
+	border-top: solid 1px #BCCDE4;
+	border-bottom: solid 1px #BCCDE4;
+	border-right: solid 1px #BCCDE4;
+	padding-left: 4px;
+	padding-right: 4px;
+}
+
+.GridRow_DPD A:link {color: #4B4B4B; text-decoration: none;}
+.GridRow_DPD A:visited {color: #4B4B4B; text-decoration: none;}
+.GridRow_DPD A:hover {color: #0088E4; text-decoration: underline;}
+.GridRow_DPD A:visited:hover {color: #0088E4; text-decoration: underline;}
+
+/* DPD: Pass class down to cells when styling a normal datagrid */
+.GridAltRow_DPD,
+.GridAltRow_DPD td
+{
+	background: #E2EAF4;
+	height: 22px;
+	border: solid 0px #f7f7f7;
+	border-top: solid 1px #BCCDE4;
+	border-bottom: solid 1px #BCCDE4;
+	border-right: solid 1px #BCCDE4;
+	padding-left: 4px;
+	padding-right: 4px;
+}
+
+.GridAltRow_DPD A:link {color: #4B4B4B; text-decoration: none;}
+.GridAltRow_DPD A:visited {color: #4B4B4B; text-decoration: none;}
+.GridAltRow_DPD A:hover {color: #0088E4; text-decoration: underline;}
+.GridAltRow_DPD A:visited:hover {color: #0088E4; text-decoration: underline;}
+
+/* DPD: Pass class down to cells when styling a normal datagrid */
+.GridRow_DPD_Over,
+.GridRow_DPD_Over td
+{
+	background: #9CADC4;
+	height: 22px;
+	border: solid 0px #D7D7D7;
+	border-top: solid 1px #BCCDE4;
+	border-bottom: solid 1px #BCCDE4;
+	border-right: solid 1px #BCCDE4;
+	padding-left: 4px;
+	padding-right: 4px;
+	cursor: pointer;
+}
+
+.GridRow_DPD_Over A:link {color: #4B4B4B; text-decoration: none;}
+.GridRow_DPD_Over A:visited {color: #4B4B4B; text-decoration: none;}
+.GridRow_DPD_Over A:hover {color: #0088E4; text-decoration: underline;}
+.GridRow_DPD_Over A:visited:hover {color: #0088E4; text-decoration: underline;}
+
+.GridRow_DPD_Selected,
+.GridRow_DPD_Selected td
+{
+  background: yellow;
+	height: 22px;
+	border: solid 0px #D7D7D7;
+	border-top: solid 1px #BCCDE4;
+	border-bottom: solid 1px #BCCDE4;
+	border-right: solid 1px #BCCDE4;
+	padding-left: 4px;
+	padding-right: 4px;
+}
+
+.GridRow_DPD_Selected A:link {color: #4B4B4B; text-decoration: none;}
+.GridRow_DPD_Selected A:visited {color: #4B4B4B; text-decoration: none;}
+.GridRow_DPD_Selected A:hover {color: #0088E4; text-decoration: underline;}
+.GridRow_DPD_Selected A:visited:hover {color: #0088E4; text-decoration: underline;}
+
+/* Print Page */
+.PageTitle {  FONT-SIZE: 22pt;  FONT-FAMILY: Verdana; }
+
+#apDiv1 {
+      position:relative;
+      width:32px;
+      height:32px;
+      left: 20px;
+      top: 20px;
+}
+div.spacer {
+	clear: both;
+	display: inline;
+	height: 1px;
+	overflow: auto;
+}
+
+.width {
+
+	min-width:300px;
+	border:5px solid #c00;
+	overflow: hidden;
+
+}
+
+
+
+/*************************************************************************************
+ * Show and Hide during printing
+ *************************************************************************************/
+@media print
+{
+	.PrintOnly
+	{
+		display: inline;
+	}
+	.NoPrint
+	{
+		display: none;
+	}
+	.NoPrintTable
+	{
+		display: none;
+		width: 10px;
+	}
+}
+@media screen, tv, projection, handheld, tty
+{
+	.PrintOnly
+	{
+		display: none;
+	}
+	.NoPrint
+	{
+		display: inline;
+	}
+}

@@ -1,0 +1,1 @@
+rename *.jpeg *.jpg

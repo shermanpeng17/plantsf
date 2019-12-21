@@ -1,0 +1,453 @@
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=9" />
+  <title>SF PlantFinder</title>
+
+  <!-- New Font Awesome -->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
+    integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+
+  <!-- bootstrap style-->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+  <!-- bootstrap jquery and javascript -->
+  <script src="https://code.jquery.com/jquery-3.0.0.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"
+    integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"
+    integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k"
+    crossorigin="anonymous"></script>
+
+
+  <link rel="stylesheet" href="http://serverapi.arcgisonline.com/jsapi/arcgis/3.3/js/dojo/dijit/themes/claro/claro.css">
+  <link rel="stylesheet" href="http://serverapi.arcgisonline.com/jsapi/arcgis/3.3/js/esri/css/esri.css">
+  <link rel="stylesheet" href="css/style.css">
+
+  <!-- <link rel="stylesheet" href="css/glossary.css"> -->
+
+</head>
+
+<body>
+  <!-- Header Content -->
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="http://sfplanninggis.org/plantsfdev/">
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
+      aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div id="navbarNavDropdown" class="navbar-collapse collapse">
+      <ul class="navbar-nav mr-auto">
+
+      </ul>
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link" href="http://sfplanninggis.org/plantsfdev4.x_/">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link stepAbout" href="about.html">About</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link stepGlossary" href="glossary.html">Glossary</a>
+        </li>
+        <li class="nav-item stepResources">
+          <a class="nav-link" href="resources.html">Resources</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- End Header Content -->
+
+  <!-- Body Content -->
+  <div id="mainContentShell">
+    <div id="mainContent">
+
+      <div id="logo-container">
+        <a class="navbar-brand" href="http://sfplanninggis.org/plantsfdev4.x_/">
+          <img class="logo_ stepWelcome" src="images/header-logo.png">
+        </a>
+        <div class="site-description_">
+          A toolkit for creating habitat and greening San Francisco
+        </div>
+      </div>
+      <!-- Right Column Content -->
+      <div id="subPageContent">
+
+
+        <div class="page-title-container">
+          <!-- <h1></h1> -->
+          Glossary of Terms <i class="fas fa-book"></i>
+        </div>
+        <p><a href="#plantCommunities">&raquo; Plant Community</a>
+          <p><a href="#streetTree">&raquo; Street Trees </a><br />
+            <p><a href="#plantType">&raquo; Plant Type</a><br />
+              <a href="#soilType">&raquo; Soil Type</a><br />
+              <a href="#wateringNeeds">&raquo; Watering Needs</a><br />
+              <a href="#appropriateLocation">&raquo; Appropriate Location</a><br />
+              <a href="#climateAppropriateness">&raquo; Climate Appropriate Plants</a><br />
+              <a href="#climateChange">&raquo; Climate Change</a><br />
+              <a href="#fungusPhytophthora">&raquo; The Fungus known as Phytophthora</a><br />
+
+              <p>&nbsp;</p>
+              <p><a name="plantCommunities"></a></p>
+              <div class="glossary-term-container">
+                <h3 class="glossary-term" id="plantType">Plant Community</h3>
+              </div>
+              <br>
+              <p>A plant community is an assemblage of plant (animal and fungi) species that have co-evolved through
+                time within a specific geographic area. The characteristics of every plant community are influenced by
+                the physical environment – such as geology, topography and climate – as well as human disturbances, such
+                as urban development. Several different indigenous plant communities remain in San Francisco. As in the
+                rest of California, wetlands and riparian areas used to be abundant throughout the city, but are now
+                restricted to only a few locations.</p>
+              <p>&nbsp;</p>
+              <p><a title="Click to view Chaparral plants" href="index.html?community=chaparral"><img
+                    src="images/btn-chaparral.png" alt="Chaparral" width="100" height="100" align="left"
+                    style="margin-right:20px; margin-bottom:35px;" /></a><span class="glossary-term"><a
+                    title="Click to view Chaparral plants" href="index.html?community=chaparral">Chaparral</a>:</span> A
+                woody shrubland plant community that features sun-loving plants with hard, sclerophyllous evergreen
+                leaves. San Francisco harbors a form of <em>maritime chaparral</em> on the Presidio’s serpentine bluffs,
+                dominated by blue-blossom ceanothus and historically our endemic manzanitas. The southeastern slopes of
+                Mt. Tamalpais in Marin County harbor the closet example of classic California chaparral.<br />
+                <em>Plant Examples: Manzanita, Ceanothus, and Flannel Bush</em></p>
+              <p>&nbsp;</p>
+              <p>&nbsp;</p>
+              <p><a title="Click to view Coastal Scrub plants" href="index.html?community=coastalscrub"><img
+                    src="images/btn-coastal-scrub.png" alt="Coastal Scrub" width="100" height="100" align="left"
+                    style="margin-right:20px; margin-bottom:35px;" /></a><span class="glossary-term"><a
+                    title="Click to view Coastal Scrub plants" href="index.html?community=coastalscrub">Coastal
+                    Scrub</a>:</span> Coastal scrub is one of the predominant remaining natural communities in San
+                Francisco. This plant community is characterized by low-growing, aromatic shrubs, such as coyote bush
+                sticky monkey flower and California sagebrush. Coastal scrub thrives in the fog belt. We also have a
+                more moisture-loving version of coastal scrub characterized by deciduous plants like  pink-flowering
+                currant, California hazelnut and oceanspray, which can be found on Mt. Davidson in particular.<br />
+                <em>Plant Examples:</em> <em>California blackberry, Coffeeberry, and Yerba Buena.<br />
+                </em></p>
+              <p>&nbsp;</p>
+              <p>&nbsp;</p>
+              <p><a title="Click to view Dunes plants" href="index.html?community=dunes"><img src="images/btn-dunes.png"
+                    alt="Dunes" width="100" height="100" align="left"
+                    style="margin-right:20px; margin-bottom:75px;" /></a><span class="glossary-term"><a
+                    title="Click to view Dunes plants" href="index.html?community=dunes">Dunes</a>:</span> As much as a
+                quarter to a third of San Francisco was once covered in sand dunes, and is still underlain by sandy
+                soils. Remnants of a once biodiverse dune ecosystem still support a unique array of plants and animals.
+                Plants in the coastal strand - just above the beach high tide line - commonly have small, waxy or
+                succulent leaves, allowing them to survive in the dry, nutrient–poor sand while being battered by wind
+                and salt spray. Behind the coastal strand are the &ldquo;foredunes&rdquo; which are more stabilized and
+                support perennial shrubs. The dunes once stretched from Ocean Beach across the peninsula to Yerba Buena
+                Cove (Downtown today), and harbored ponds and creeks. Wildflower meadows, dense dune scrub and oak
+                woodlands are still found in the dunes.<br />
+                <em>Plant Examples: Dune strawberry, Lupines, and Yellow Sand Verbena.</em></p>
+              <p>&nbsp;</p>
+              <p>&nbsp;</p>
+              <p><a title="Click to view Grassland/Prairie plants" href="index.html?community=grasslandprairie"><img
+                    src="images/btn-coastal-prairie.png" alt="Coastal Prairie" width="100" height="100" align="left"
+                    style="margin-right:20px; margin-bottom:20px;" /></a><span class="glossary-term"><a
+                    title="Click to view Grassland/Prairie plants"
+                    href="index.html?community=grasslandprairie">Grassland/Prairie</a>:</span> Formerly the most common
+                habitat in San Francisco, remnants of grasslands support a wide array of wildlife. Composed of deep
+                rooted, soil-stabilizing, perennial bunch grasses, coastal prairies are important hunting grounds for
+                raptors, coyote, and other predators, while also harboring a diversity of wildflowers - including rare
+                and endangered plants that support bees and butterflies.<br />
+                <em>Plant Examples:</em> <em>Yarrow, Purple Needle Grass, Coast Iris and Blue Wild Rye.</em></p>
+              <p>&nbsp;</p>
+              <p>&nbsp;</p>
+              <p><a title="Click to view Riparian plants" href="index.html?community=riparian"><img
+                    src="images/btn-riparian.png" alt="Riparian" width="100" height="100" align="left"
+                    style="margin-right:20px; margin-bottom:20px;" /></a><span class="glossary-term"><a
+                    title="Click to view Riparian plants" href="index.html?community=riparian">Riparian</a>:</span> This
+                plant community is associated with the linear course of creeks and streams and composed of various
+                species of trees, shrubs, and herbs that thrive in a nearly wetland environment They purify water by
+                removing contaminants, control erosion, and provide habitat for a variety of plants and animals. San
+                Francisco had many miles of riparian habitat before most of our creeks were buried in culverts and made
+                part of the sewer system.<br />
+                <em>Plant Examples: Arroyo Willow, Wax Myrtle and Creek Dogwood</em></p>
+              <p>&nbsp;</p>
+              <p>&nbsp;</p>
+              <p><a title="Click to view Wetland plants" href="index.html?community=wetland"><img
+                    src="images/btn-freshwater-wetland.png" alt="Freshwater Wetland" width="100" height="100"
+                    align="left" style="margin-right:20px;" /></a><span class="glossary-term"><a
+                    title="Click to view Wetland plants" href="index.html?community=wetland">Wetland</a>:</span>
+                Wetlands are among the most important ecosystems worldwide. They produce high levels of oxygen, filter
+                chemicals, reduce flooding and erosion, recharge groundwater, and provide critical habitat. There are
+                many different kinds of wetlands, and San Francisco has several, including freshwater, saltwater, and
+                riparian.<br />
+                <em>Plant Examples: Pickleweed, Gumplant, Rushes, and Sedges</em></p>
+              <p>&nbsp;</p>
+              <p>&nbsp;</p>
+              <p><a title="Click to view Oak Woodland plants" href="index.html?community=woodland"><img
+                    src="images/btn-oak-woodland.png" alt="Oak Woodland" width="100" height="100" align="left"
+                    style="margin-right:20px; margin-bottom:35px;" /></a><span class="glossary-term"><a
+                    title="Click to view Oak Woodland plants" href="index.html?community=woodland">Oak
+                    Woodland</a>:</span> Among the most characteristic of Bay Area plant communities, oak woodlands made
+                up the only extensive wooded areas of San Francisco prior to European contact. Dominated by coast live
+                oaks, these complex and diverse habitats harbor more wildlife than any other terrestrial plant community
+                in the Bay Area and provide a sheltered environment for many shade-tolerant species. The Richmond
+                District has the most oak woodlands remaining in the city, including in northeastern Golden Gate Park
+                and along the southern border of the Presidio.<br />
+                <em>Plant Examples: California bee plant, Toyon and Osoberry.</em></p>
+              <p>&nbsp;</p>
+              <div class="glossary-term-container">
+                <h3 class="glossary-term" id="streetTree">Street Trees </h3>
+              </div>
+              <br>
+
+              <p>The <a
+                  href="https://sfenvironment.org/article/managing-our-urban-forest-best-practices/list-of-recommended-street-trees"
+                  target="_blank"> Urban Forestry Council</a> annually reviews and updates a list of trees, in
+                collaboration with public and non-profit urban forestry stakeholders, including the Urban Forestry
+                Division of the Department of Public Works and Friends of the Urban Forest. The list includes three
+                sections, 1(A), 2(B), and 3 (C) defined by locations suited for different tree types. Just as with
+                landscaping in general, it is important to match carefully the conditions of a site with the tree you
+                choose. Please note that while the list contains recommendations that are known to do well in many
+                locations in San Francisco, no tree is appropriate for every potential tree planting location. The list
+                should be used as a guideline for choosing which street tree to plant, but should not be used without
+                the help of a tree professional.</p>
+
+              <p>The<a href="http://50.17.237.182/plantsf/index.html"> Plant Finder </a>can be used to search for street
+                trees on the approved list. To search, filter results by <em>Plant Type</em> (Select Tree (Evergreen)
+                and Tree (Deciduous) <strong>and</strong> by <em>Appropriate Location </em>(select Sidewalk). For each
+                tree, you will be able to see if it is on an approved street tree list. </p>
+
+              <p>Approved Street Tree List: </p>
+              <p><span class="glossary-term">1 (A):</span> Tree species, varieties, and cultivars that do well in the
+                San Francisco area. </p>
+
+              <p><span class="glossary-term">2 (B)</span>: Tree species, varieties, and cultivars that do well with
+                certain special considerations, which may not be appropriate for planting broadly throughout the San
+                Francisco area.</p>
+
+              <p><strong>3 (C)</strong>: Species that need further evaluation. Not included in the SF Plant Finder.  
+              </p>
+
+              <p><span class="glossary-term">NA:</span> The plant or tree is not on a recommended street tree list. </p>
+
+
+              <!-- <p><a name="plantType"></a></p> -->
+              <br><br>
+              <div class="glossary-term-container">
+                <h3 class="glossary-term" id="plantType">Plant Type</h3>
+
+              </div>
+              <br>
+              <p><span class="glossary-term">Annuals:</span> These are plants that perform their entire life cycle from
+                seed to flower to seed again within a single year. All roots, stems, and leaves of the plant die
+                annually. Only the dormant seed bridges the gap between one generation and the next.</p>
+
+              <p><span class="glossary-term">Perennials:</span> The term refers to any plant that persists for more than
+                one or two growing seasons. Some perennials persist for many years including those in which the top
+                portion of the plant dies back each dry season and grows back the following winter from the same root
+                system. Many if not most perennials (in California) keep their leaves all year round.</p>
+
+              <p><span class="glossary-term">Evergreen</span>: Plants which retain their foliage in all seasons and are
+                green all year round are evergreens. This does not mean, however, that evergreens never lose their
+                leaves. Evergreens conserve energy and nutrients by continually growing new leaves as old ones are shed
+                during all seasons, but particularly during the dry season.</p>
+
+              <p><span class="glossary-term">Deciduous:</span> Plants which shed their foliage annually at the end of
+                the growing season are more usually associated with the deciduous forests of the eastern third of the
+                U.S. California harbors many deciduous species of plants as well. Instead of shedding leaves due to
+                cold, many deciduous plants in California’s Mediterranean climate zone shed their leaves during the dry
+                season, in order to save energy and nutrients.</p>
+
+              <p><span class="glossary-term">Tree/Shrub:</span> Trees are different from shrubs in that they have a
+                single central stem or trunk, while shrubs often have multiple, thinner stems. Trees also tend to have a
+                distinct shape and crown, while shrubs may consist of a large hedge that spreads over the ground. The
+                other difference is that trees are generally thicker in the trunk and taller than shrubs.</p>
+
+
+              <br><br>
+              <!-- <p><a name="soilType" id="soilType"></a></p> -->
+              <div class="glossary-term-container">
+                <h3 class="glossary-term" id="soilType">Soil Type</h3>
+              </div>
+              <br>
+              <p><span class="glossary-term">Rock:</span> Soil that is very pebbly, gritty, and composed mostly of large
+                pieces of rocks. Rocky soil tends to have fewer nutrients than other soil types since  it has less
+                organic matter. Rocky soil often does not hold water well, although this can vary. </p>
+
+              <p><span class="glossary-term">Clay:</span> Soil composed of very small and fine particles that clump
+                together and prohibit water and nutrient movement. They feel slick and sticky when wet and hold water
+                well, but resist water infiltration, especially when they are dry. Puddles often form on clay soils, and
+                they easily become compacted.</p>
+
+              <p><span class="glossary-term">Loam:</span> Soil made of a mixture of sand, clay, and organic matter. Loam
+                soils are very nutrient rich and store water well because of the heavy grittiness given from the sand,
+                but also have exceptional drainage. When squeezed in your fist, moist loam will form a ball which
+                crumbles when poked with a finger.</p>
+
+              <p><span class="glossary-term">Sand:</span> Soil composed of relatively large, coarse particles visible to
+                the eye and usually light in color. Sandy soil is loose and allows water and nutrients to penetrate
+                easily, but also drains very rapidly and does not always allow for water and nutrient retention. Sand
+                feels coarse when wet or dry, and will not form a ball when squeezed in your fist. </p>
+
+              <p><span class="glossary-term">All:</span> These plant species are extremely versatile and can grow in any
+                soil type (Rock, Clay, Loam, Sand). </p>
+
+              <br><br>
+
+              <!-- <p><a name="wateringNeeds" id="wateringNeeds"></a></p> -->
+              <div class="glossary-term-container">
+                <h3 class="glossary-term" id="wateringNeeds">Watering Needs</h3>
+              </div>
+              <br>
+
+              <p>The <a href="http://ucanr.edu/sites/WUCOLS/" target="blank">WUCOLS</a> system was used as a guide for
+                information about species water needs. This field is designed to indicate average watering needs, with
+                the assumption that the plant is already established, having survived a dry season. Plants may have
+                different watering needs during their establishment phase. 99% of these plants should be able to survive
+                without added water if they are planted in the right location. For example, a plant that is tagged
+                &ldquo;moderate&rdquo; is usually a wetland plant, and so they are adapted to the summer drought insofar
+                as their soil remains wet enough throughout the dry season. These plants are best planted at the bottom
+                of a slope, or perhaps next to a fence, on the other side of which a neighbor may be watering regularly.
+                If they are planted in an average moisture location then they will require water. </p>
+
+              <p><span class="glossary-term">None:</span> No watering needed after establishment. </p>
+
+              <p><span class="glossary-term">Low:</span> Water about once or twice a month for the duration of the six
+                month dry season. These plants can definitely survive the dry season with no added water if they are
+                planted in the right place.</p>
+
+              <p><span class="glossary-term">Moderate:</span> Water about once a week in a sunny location. Ideally, try
+                to plant these species in low-lying and naturally moist areas and/or with ample shade..</p>
+              <br><br>
+
+              <div class="glossary-term-container">
+                <h3 class="glossary-term" id="appropriateLocation">Appropriate Location</h3>
+              </div>
+              <br>
+
+              <p><span class="glossary-term">Garden:</span> Recommended plant for gardens or private property not within
+                the public right-of-way.</p>
+
+              <p><span class="glossary-term">Potted Plants:</span> These are all small stature plants that could do well
+                in pots with the proper amount of watering. Even the most sun-loving, drought tolerant perennials need
+                some water when living in a planter pot.</p>
+
+              <p><span class="glossary-term">Roof:</span> A living roof is a roof of a building which includes
+                vegetation and a growing medium as an integral component of the roofing system. Living roofs also
+                include a water proofing and root repellant layer, a drainage system, filter fabric and sometimes an
+                irrigation system. Living roofs are also called green roofs or vegetated roofs. The plants that do well
+                on top of a roof tend to have shallow, fibrous roots and be drought tolerant, perennial or self-seeding,
+                low-nutrient tolerant, heat tolerant, lightweight, adapted to sandy or free-draining soils, and low
+                maintenance. The genus <em>Sedum</em> from the family Crassulaceae is the most commonly used for living
+                roofs, but many other drought tolerant plant types can be successfully grown. In San Francisco, the lack
+                of precipitation for six or more months of the year means that even extremely drought tolerant living
+                roof plants will most likely need to be irrigated, at least during the establishment period. </p>
+
+              <p><span class="glossary-term">Sidewalk:</span> Recommended plants for sidewalk landscaping or median
+                planting. Recommended street trees for sidewalks and other public spaces based on the Urban Forestry
+                Council's annually updated street tree list.</p>
+
+              <p><span class="glossary-term">Stormwater:</span>These plants are recommended by the San Francisco Public
+                Utilities Commission for planting in stormwater facilities or stormwater gardens when complying with the
+                <a href="http://sfwater.org/index.aspx?page=1000" target="_blank">City's Stormwater Ordinance</a>. You
+                can use the <a href="index.html?community=Stormwater">Plant Finder</a> to access this entire list.</p>
+
+
+              <!-- <p><a name="climateAppropriateness" id="climateAppropriateness"></a></p> -->
+              <br><br>
+              <div class="glossary-term-container">
+                <h3 class="glossary-term" id="climateAppropriateness">Climate Appropriate Plants</h3>
+              </div>
+              <br>
+              <p><span class="glossary-term">SF Native</span>: These plants are indigenous to the northern San Francisco
+                peninsula, and generally more broadly as well. A plant in this category could be endemic to the city
+                itself or to the Bay Area or it could also have a range across North America and even Europe.</p>
+
+              <p><span class="glossary-term">CA Native</span>: These plants are indigenous to California, in particular
+                the California Floristic Province, but are not native to San Francisco. This means they were never
+                recorded here by early botanists, and are known to have ranges that do not include the northern tip of
+                the peninsula.</p>
+
+              <p><span class="glossary-term">Exotic</span>: The plants are not indigenous to San Francisco, nor to the
+                rest of California. They may be from the eastern United States or anywhere else on Earth.</p>
+
+              <br><br>
+              <!-- <p><a name="climateChange" id="climateChange"></a></p> -->
+              <div class="glossary-term-container">
+                <h3 class="glossary-term" id="climateChange">Climate Change</h3>
+              </div>
+              <br>
+              <p>Global climate change and biodiversity are the two most important environmental issues of the 21st
+                century. The disruption and destruction of ecosystems around the world continues to contribute to global
+                biodiversity loss. Ecological collapse also contributes to global climate change, which in turn may have
+                profound effects on global biodiversity. Ecological restoration heals ecosystems and biodiversity; we
+                should continue to expand ecological restoration in San Francisco. The healthier (i.e., less impacted by
+                invasive species and other problems) our local ecosystems are, the more biodiverse and thus, more
+                resilient they will be. Using local native plants for all forms of landscaping and greening in the city
+                can make a real and significant contribution to the health, vitality and climate resilience of San
+                Francisco’s natural heritage.</p>
+              <br><br>
+
+              <div class="glossary-term-container">
+                <h3 class="glossary-term" id="fungusPhytophthora"> The Fungus known as Phytophthora</h3>
+              </div>
+              <br>
+              <p><a href="http://www.suddenoakdeath.org/" target="_blank">Sudden oak death</a> or <i>Phytophthora
+                  ramorum</i> is the most well-known phytophthora species. Although sudden oak death is now endemic in
+                coastal California, San Francisco has been spared so far from the fungus invading our <a
+                  href="http://50.17.237.182/plantsf/glossary.html#plantCommunities">oak woodlands</a>. Meanwhile,
+                California <a href="http://baynature.org/article/nursery/" target="_blank">native plant nurseries</a>
+                are suffering from infestations of more species of Phytophthora, and they are having to employ rigorous
+                <a href="http://phytosphere.com/BMPsnursery/Index.htm" target="_blank">best management practices</a> to
+                avoid spreading the disease from the nursery environment to parks and wildlands.</p>
+
+              <p>&nbsp;</p>
+
+              <p>&nbsp;</p>
+      </div>
+
+
+
+    </div>
+    <!-- End mainContent -->
+
+  </div>
+  <!-- End mainContentShell -->
+
+  <!-- Footer Content -->
+  <footer id="footerShell">
+    <div id="footerContent" style="display:flex">
+      <div class="left">&copy; <span id="year"></span> City and County of San Francisco.<br />
+        This site is brought to you by the following city agencies and <br />
+        a grant from the California Strategic Growth Council.</div>
+      <div class="right"><img src="images/dept-logos.png" width="690" height="64" border="0" usemap="#agencies" />
+        <map name="agencies" id="agencies">
+          <area shape="rect" coords="105,8,227,62" href="http://www.sfplanning.org" target="_blank"
+            alt="San Francisco Planning Department" />
+          <area shape="rect" coords="630,2,694,61" href="http://www.sfdpw.org" target="_blank"
+            alt="San Francisco Department of Public Works" />
+          <area shape="rect" coords="273,0,369,64" href="http://www.sfenvironment.org" target="_blank"
+            alt="SF Environment" />
+          <area shape="rect" coords="409,8,591,60" href="http://www.sfwater.org" target="_blank"
+            alt="SF Public Utilities Commission" />
+        </map>
+
+      </div>
+    </div>
+  </footer>
+  <!-- End Footer Content -->
+  <script>
+    var year = new Date().getFullYear();
+    $('#year').text(year);
+    
+    $(window).scroll(function () {
+      if ($(this).scrollTop() > 0) {
+        $('#logo-container').hide();
+
+      } else {
+        $('#logo-container').show();
+      }
+    })
+  </script>
+</body>
+
+</html>

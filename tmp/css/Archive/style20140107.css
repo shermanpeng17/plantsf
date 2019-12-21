@@ -1,0 +1,521 @@
+	@charset "UTF-8";
+/* CSS Document */
+/*
+Name: SFPlantFinder
+Date: December 2013
+Author: Gary Chen
+Organization: San Francisco Planning Department
+Description: Theme for SF PlantFinder Database web site.
+
+
+
+/* THE BASICS */
+
+* {margin:0; padding:0;}
+
+body {background-color:#E7E7E7; height:100%; width:100%;}
+
+img {border: 0;}
+
+
+h1 {
+	font-family: Georgia, "Times New Roman", Times, serif;
+	font-size: 32px;
+	font-weight: normal;
+	line-height: 1.15em;
+	letter-spacing: -.015em;
+	color: #333;
+	padding-bottom: .5em;
+}
+
+h2, h3 {font-family:"Helvetica Neue", Helvetica, Arial, sans-serif;}
+
+p {
+	font-family: Georgia, "Times New Roman", Times, serif;
+	font-size: 14px;
+	font-style: normal;
+	line-height: 1.5em;
+	color: #373737;
+}
+
+.smalltext {
+	color: #373737;
+	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; 
+	font-weight:normal;
+	font-size: 10px;
+	font-style: normal;
+	line-height: 1.15em;
+}
+
+strong {font-weight: 600;}
+
+li {
+	display: list-item;
+	list-style:  inside circle;
+	font-family: Georgia, "Times New Roman", Times, serif;
+	font-size: 14px;
+	font-style: normal;
+	line-height: 1.5em;
+	color: #373737;
+}
+
+a {color: #393; text-decoration: none;}
+a:hover {text-decoration: none; color: #399; text-decoration: underline}
+
+
+/* TABLES */
+table {
+border-collapse:  collapse;
+border-spacing: 0px;
+}
+
+th {
+font-weight: bold;
+}
+
+td, th {
+display: table-cell;
+vertical-align: inherit;
+}
+
+
+
+/* HEADER CONTENT */
+
+#headerShell {
+	width:100%;
+	background: url(../images/header-bkg.jpg) repeat-x;
+	background-color:#A0B467;
+	height:80px;
+	text-align:center;
+	position:relative;
+	z-index: 1000;
+}
+
+#headerContent {
+	position: relative;
+	width: 1000px;
+	height: 80px;
+	display: inline-block;
+	margin: 0;
+}
+
+#headerContent .logo {
+	background: no-repeat center url(../images/header-logo.png);
+	left: 25px;
+	height: 125px;
+	width: 150px;
+	display: block;
+	float: left;
+	position: relative;
+}
+
+#headerContent .links {
+	float: right;
+	padding: 8px 14px;
+	background-color: #E7E7E7;
+	border-top: 2px solid #666;
+	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+	font-size: 14px;
+	font-weight: bold;
+	position: relative;
+	right: 0;
+	top: 50px;
+	margin-left:15px;
+}
+
+#headerContent .links a {text-decoration:none; color:#393;}
+#headerContent .links a:hover {text-decoration:none; color:#512F25;}
+
+
+#headerContent .site-description {
+	font-family: Georgia, "Times New Roman", Times, serif;
+	font-size: 18px;
+	color: #FFF;
+	font-style: italic;
+	position: absolute;
+	left: 200px;
+	top: 40px;
+	line-height: 1.25em;
+}
+
+
+/* MAIN PAGE CONTENT */
+
+#mainContentShell {
+	width: 100%;
+	height: 100%;
+	margin: 0;
+	text-align: center;
+	position: relative;
+}
+
+#mainContent {
+	width: 1020px;
+	height: 100%;
+	margin-top: 25px;
+	margin-bottom: 25px;
+	text-align:left;
+	position: relative;
+	display: inline-block;
+}
+
+
+/* HOMEPAGE LEFT COLUMN SHELL */
+
+#homeLeftCol {
+	position: relative;
+	display: inline-block;
+	width: 360px;
+	height: 770px;
+	background-color: #FFF;
+	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+	line-height: 1.15em;
+	text-align: left;
+	padding: 15px;
+	margin-right: 25px;
+	clear: none;
+}
+
+
+/* HOMEPAGE LEFT COLUMN: Map Search */
+
+#addressForm {
+	margin: 0;
+	font-size: 14px;
+	width: 360px;
+	padding: 15px 0 15px 0;
+}
+
+#addressInput {
+	display: inline;
+	font-size: 15px;
+	margin: 0;
+	padding: 5px;
+	border: 2px solid #CCC;
+	vertical-align: middle;
+	width: 250px;
+	height: 20px;
+	clear: none;
+}
+
+.searchButton a {
+	background-color: #75B43E;
+	color: #FFF;
+	cursor: pointer;
+	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+	font-size:14px;
+	font-weight: bold;
+	padding: 7px 14px 7px 14px;
+	text-decoration: none;
+	border: 2px solid #CCC;
+	border-radius: 6px;
+	-moz-border-radius: 6px;
+	-webkit-border-radius: 6px;
+	clear:none;
+}
+
+.searchButton a:hover {
+	background-color: #512F25;
+	border: 2px solid #CCC;
+	color: #D1E48F;
+	text-decoration: none;
+}
+
+/* HOMEPAGE LEFT COLUMN: Map */
+
+
+/* HOMEPAGE LEFT COLUMN: Buttons for Plant Communities */
+
+#plantcommunities {
+	width: 360px;
+	padding: 20px 0 10px 0;
+	margin-top: 15px;
+	border-top: 1px dashed #CCC;
+	color: #999;
+}
+
+#plantcommunities .links td {
+	font-size:12px;
+	font-weight: 700;
+	line-height: 1.2em;
+	color: #393;
+	vertical-align: top;
+}
+
+#plantcommunities .links img {
+	padding-bottom: 8px;
+	cursor: pointer;
+}
+
+#plantcommunities .links a:hover { opacity: .9; -webkit-filter: saturate(2.5); }
+
+
+/* HOMEPAGE RIGHT COLUMN SHELL */
+
+#homeRightCol {
+	position: relative;
+	width: 600px;
+	height: 800px;
+	display: inline;
+	float: right;
+	background-color: #FFF;
+	font-family: Georgia, "Times New Roman", Times, serif;
+	line-height: 1.25em;
+	text-align: left;
+}
+
+#homeRightCol h2 {
+	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+	font-size: 12px;
+	font-style: italic;
+	font-weight: normal;
+	line-height: 1.15em;
+	color: #85BF3F;
+}
+
+.columnPointer {
+	background: no-repeat center url(../images/bkg-column-pointer.png);
+	height: 38px;
+	width: 20px;
+	display: inline-block;
+	left: -20px;
+	top: 230px;
+	position: absolute;
+	clear: none;
+}
+
+
+/* HOMEPAGE RIGHT COLUMN: Search Results and Hidden Frame for Search Filter */
+
+#searchResults {
+	position: relative;
+	width: 560px;
+	height: 640px;
+	overflow-y: auto;
+	background-color: #FFF;
+	padding: 25px 20px 20px 20px;
+}
+
+#searchResults .toggleFilter {
+	position: relative;
+	float: right;
+	text-align: right;
+	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+	font-size: 12px;
+	font-style: normal;
+	font-weight: 700;
+	color: #6C3;
+	cursor: pointer;
+	clear: none;
+	visibility:hidden;
+}
+#searchResultsSummary h2 {
+	color: #85BF3F;
+}
+#searchResults table {
+	width: 100%;
+	padding: 0;
+	border: 0;
+	margin-top: 20px;
+}
+
+#searchResults td {
+	vertical-align: top;
+	padding-right: 10px;
+	padding-bottom: 10px;
+}
+
+#searchResults p {
+	font-size: 14px;
+	font-weight: 700;
+	line-height: 1.2em;
+}
+
+#searchResults h2 {
+	padding-top: 5px;
+	color: #999;
+}
+
+#imagesTable td {
+	vertical-align: top;
+	padding-right: 0px;
+	padding-bottom: 0px;
+}
+
+
+
+#floatingDivForFilter {
+	width: 300px;
+	position: absolute;
+	visibility: hidden;
+	float: right;
+	top: 0;
+	right: 0;
+	padding: 25px 20px 25px 20px;
+	background-color: #5A4A42;
+	font-family: Georgia, "Times New Roman", Times, serif;
+	font-style: normal;
+	font-size: 12px;
+	font-weight: normal;
+	line-height: 1.35em;
+	color: #FFF;
+	clear: none;
+}
+
+#floatingDivForFilter h1 {
+	font-family: Georgia, "Times New Roman", Times, serif;
+	font-size: 18px;
+	font-style: normal;
+	color: #FFF;
+}
+
+#floatingDivForFilter h2 {
+	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; 
+	font-size: 12px;
+	font-weight: normal;
+	font-style: italic;
+	color: #9C0;
+	margin-top: 15px;
+	padding-bottom: 3px;
+	border-bottom: 3px solid #666;
+	margin-bottom: 5px;
+}
+
+/* HOMEPAGE RIGHT COLUMN: Green Connections */
+
+#greenConnectionsList {
+	position: relative;
+	border-top: 1px dashed #CCC;
+	width: 560px;
+	min-height: 70px;
+	background-color: #FFF;
+	padding: 20px;
+}
+
+.gclogo {
+	width: 75px;
+	display: block;
+	float: right;
+	position: relative;
+	text-align: center;
+}
+
+
+/* HOMEPAGE RIGHT COLUMN: Hidden Frame for Plant Info */
+
+#info {
+	position: relative;
+	visibility: visible;
+	position: absolute;
+	top: 55px;
+	left: -5px;
+	width: 547px;
+	height: 600px;
+	
+	background-color: #FFF;
+	padding: 5px 20px 20px 20px;
+	clear: none;
+	z-index: 1000;
+}
+
+#info .images {
+	position: relative;
+	float:right;
+	width: 280px;
+	padding: 0px;
+	margin-left: 15px;
+}
+
+
+#info  h2 {
+	color: #85BF3F;
+}
+#info  p {
+	font-family: Georgia, "Times New Roman", Times, serif;
+	font-size: 14px;
+	font-style: normal;
+	line-height: 1.5em;
+	font-weight:normal;
+	color: #373737;
+}
+
+#info .plantDetails td {
+	border-top: 1px solid #EEE;
+	padding-top: 4px;
+	padding-bottom: 10px;
+	vertical-align: top;
+}
+
+#info .toggleSearch {
+	position: relative;
+	float: right;
+	text-align: right;
+	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+	font-size: 12px;
+	font-style: normal;
+	font-weight: 700;
+	color: #6C3;
+	cursor: pointer;
+	clear: none;
+}
+
+
+
+/* SUBPAGES */
+
+#subPageNav {
+	position: relative;
+	display: block;
+	float: left;
+	width: 200px;
+	margin: 40px 25px 0 36px;
+}
+
+#subPageContent {
+	position: relative;
+	display: block;
+	float: right;
+	width: 750px;
+	margin: 10px 0 10px 0;
+}
+
+
+/* FOOTER */
+#footerShell {
+	background: url(../images/footer-bkg.jpg) repeat-x;
+	background-color:#A0B467;
+	width: 100%;
+	height: 100px;
+	position: relative;
+	text-align:center;
+	bottom: 0;
+	clear: both;
+}
+
+#footerContent {
+	position: relative;
+	bottom: 0;
+	width: 1000px;
+	height: 100px;
+	display: inline-block;
+	margin: 0;
+}
+
+#footerContent .left {
+	width: 320px;
+	margin-top: 50px;
+	float: left;
+	text-align: left;
+	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+	font-size: 10px;
+	color: #454545;
+	clear: none;
+}
+
+#footerContent .right {
+	float: right;
+	text-align: right;
+	margin-top: 20px;
+	padding: 0px;
+}
